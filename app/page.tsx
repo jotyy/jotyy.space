@@ -1,5 +1,6 @@
 "use client";
 
+import { ProjectList } from "@/components/project-list";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -49,7 +50,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"></div>
+        <ProjectList />
       </div>
 
       <div className="flex flex-col gap-6">

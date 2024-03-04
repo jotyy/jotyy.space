@@ -35,24 +35,6 @@ export const PROFILES = {
   },
 };
 
-export const TWEETS_COLLECTION_ID = 15896982;
-
-export const COLLECTION_IDS = [
-  18259129,
-  15968768,
-  23598938,
-  16949672,
-  15807896,
-  15807897,
-  15969648,
-  16338467,
-  TWEETS_COLLECTION_ID,
-  25589709,
-  17139082,
-  22029101,
-  39696243,
-];
-
 export const LINKS = [
   {
     href: "/",
@@ -88,4 +70,41 @@ export const LINKS = [
 
 export const SCROLL_AREA_ID = "scroll-area";
 export const MOBILE_SCROLL_THRESHOLD = 20;
-export const SUPABASE_TABLE_NAME = "pages";
+
+export const PROJECTS = [
+  {
+    title: "Denser.ai",
+    description: "AI-powered chat and search bot",
+    href: "https://denser.ai",
+    cover: "/images/projects/denser-ai.png",
+    tags: ["Next.js", "Tailwind", "shadcn/ui"],
+  },
+  {
+    title: "Denser Dashboard",
+    description: "Admin dashboard for Denser.ai",
+    href: "https://denser.ai/u",
+    cover: "/images/projects/denser-dashboard.png",
+    tags: ["React", "Vite", "shadcn/ui", "Nest.js"],
+  },
+  {
+    title: "R3F Portfolio",
+    description: "Personal blog and portfolio",
+    href: "https://r3f-portfolio.vercel.app",
+    cover: "/images/projects/r3f-portfolio.png",
+    tags: ["React Three Fiber", "Three.js", "Tailwind"],
+  },
+  {
+    title: "Lattice Browser",
+    description: "Blockchain Explorer for LatticeChain",
+    href: "#",
+    cover: "/images/projects/lattice-browser.png",
+    tags: ["Next.js", "GraphQL", "Ethers"],
+  },
+  {
+    title: "Udun Wallet",
+    description: "Decentralized wallet for Ethereum",
+    href: "#",
+    cover: "/images/projects/udun-wallet.png",
+    tags: ["Flutter", "Ethers.js", "Rust"],
+  },
+];
