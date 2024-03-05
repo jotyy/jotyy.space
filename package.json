@@ -9,18 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.3.4",
     "@phosphor-icons/react": "^2.0.15",
+    "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-scroll-area": "^1.0.5",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "date-fns": "^3.3.1",
     "framer-motion": "^11.0.8",
     "next": "14.1.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.51.0",
     "tailwind-merge": "^2.2.1",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "tech-stack-icons": "^2.0.3",
+    "zod": "^3.22.4"
   },
   "devDependencies": {
     "typescript": "^5",

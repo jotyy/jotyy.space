@@ -1,6 +1,9 @@
 "use client";
 
+import { PageContainer } from "@/components/page-container";
+import { PostList } from "@/components/post-list";
 import { ProjectList } from "@/components/project-list";
+import { StackList } from "@/components/stack-list";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -10,7 +13,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="container max-w-4xl flex min-h-screen flex-col p-24 gap-4">
+    <PageContainer>
       <Image
         src="https://avatars.githubusercontent.com/u/30037764?v=4"
         alt="jotyy"
@@ -62,7 +65,7 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"></div>
+        <StackList />
       </div>
 
       <div className="flex flex-col gap-6">
@@ -77,10 +80,10 @@ export default function Home() {
           </Link>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3"></div>
+        <PostList />
       </div>
 
-      <Card className="border rounded-md py-4 bg-stone-50">
+      <Card className="border rounded-md py-4 bg-secondary mt-12">
         <CardContent>
           <h3 className="font-bold text-xl">Get Notifications</h3>
           <p className="text-muted-foreground">
@@ -93,6 +96,6 @@ export default function Home() {
           <Button>Subscribe</Button>
         </CardFooter>
       </Card>
-    </main>
+    </PageContainer>
   );
 }

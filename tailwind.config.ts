@@ -72,6 +72,15 @@ const config = {
           to: { height: "0" },
         },
       },
+      height: {
+        "dynamic-screen": "100dvh",
+      },
+      minHeight: {
+        "dynamic-screen": "100dvh",
+      },
+      maxHeight: {
+        "dynamic-screen": "100dvh",
+      },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",

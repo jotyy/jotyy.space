@@ -3,6 +3,7 @@ import { Manrope as FontSans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/utils/cn";
 import { SideBar } from "@/components/side-bar";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -24,10 +25,14 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
-        <aside className="lg:flex min-h-screen">
+        <aside className="lg:flex">
           <SideBar className="relative hidden lg:flex" />
         </aside>
-        <div className="flex flex-1">{children}</div>
+        <div className="flex flex-1">
+          <ScrollArea className="flex flex-col" hasScrollTitle>
+            {children}
+          </ScrollArea>
+        </div>
       </body>
     </html>
   );

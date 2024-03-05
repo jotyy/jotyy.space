@@ -1,7 +1,11 @@
+import { PageContainer, PageHeader } from "@/components/page-container";
+import { StackList } from "@/components/stack-list";
+
 export default function Stack() {
   return (
-    <div>
-      <h1>Stack</h1>
-    </div>
+    <PageContainer>
+      <PageHeader heading="Stack" />
+      <StackList />
+    </PageContainer>
   );
 }
