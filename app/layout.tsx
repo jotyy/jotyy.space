@@ -1,11 +1,13 @@
+import { draftMode } from "next/headers";
+
 import { sharedDescription, sharedTitle } from "@/app/shared-meta";
+import { NavHeader } from "@/components/nav-header";
 import { SideBar } from "@/components/side-bar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/utils/cn";
 import type { Metadata } from "next";
 import { Manrope as FontSans } from "next/font/google";
 import "./globals.css";
-import { NavHeader } from "@/components/nav-header";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -14,6 +16,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { isEnabled } = draftMode();
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
@@ -22,12 +26,19 @@ export default function RootLayout({
           fontSans.variable
         )}
       >
+        {isEnabled && (
+          <div className="absolute bottom-0 left-0 right-0 z-50 flex h-12 w-full items-center justify-center bg-green-500 text-center text-sm font-medium text-white">
+            <div className="flex items-center gap-2">
+              <span>Draft mode is enabled</span>
+            </div>
+          </div>
+        )}
         <aside className="lg:flex">
           <SideBar className="relative hidden lg:flex" />
         </aside>
         <div className="flex flex-1">
           <ScrollArea className="flex flex-col" hasScrollTitle>
-            <NavHeader scrollTitle="Jotyy Space" />
+            <NavHeader scrollTitle="Jotyy" />
             {children}
           </ScrollArea>
         </div>

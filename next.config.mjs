@@ -11,9 +11,9 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "images.unsplash.com",
+        hostname: "images.ctfassets.net",
         port: "",
-        pathname: "/photo-*",
+        pathname: "/**",
       },
     ],
   },

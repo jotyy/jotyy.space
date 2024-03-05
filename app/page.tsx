@@ -1,18 +1,64 @@
-"use client";
-
-import { NavHeader } from "@/components/nav-header";
+import { GetInTouchButton } from "@/components/get-in-touch-button";
 import { PageContainer } from "@/components/page-container";
 import { PostList } from "@/components/post-list";
 import { ProjectList } from "@/components/project-list";
+import { SectionWrapper } from "@/components/section-wrapper";
 import { StackList } from "@/components/stack-list";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { ArrowRight } from "@phosphor-icons/react";
+import { revalidateDuration } from "@/lib/constants";
+import { PageBlogPostOrder } from "@/lib/contentful/__generated/sdk";
+import { client, previewClient } from "@/lib/contentful/client";
 import Image from "next/image";
-import Link from "next/link";
 
-export default function Home() {
+async function getLandingPosts() {
+  try {
+    const locale = "en-US";
+    const preview = false;
+    const gqlClient = preview ? previewClient : client;
+
+    const landingPageData = await gqlClient.pageLanding({ locale, preview });
+    const page = landingPageData.pageLandingCollection?.items[0];
+
+    const blogPostsData = await gqlClient.pageBlogPostCollection({
+      limit: 4,
+      locale,
+      order: PageBlogPostOrder.PublishedDateDesc,
+      where: {
+        slug_not: page?.featuredBlogPost?.slug,
+      },
+      preview,
+    });
+    const posts = blogPostsData.pageBlogPostCollection?.items;
+
+    if (!page) {
+      return {
+        revalidate: revalidateDuration,
+        notFound: true,
+      };
+    }
+
+    return {
+      revalidate: revalidateDuration,
+      props: {
+        previewActive: !!preview,
+        locale,
+        page,
+        posts,
+      },
+    };
+  } catch {
+    return {
+      revalidate: revalidateDuration,
+      notFound: true,
+    };
+  }
+}
+
+export default async function Home() {
+  const { props } = await getLandingPosts();
+
   return (
     <PageContainer>
       <Image
@@ -32,57 +78,37 @@ export default function Home() {
         B2B, B2C solutions, creating user-centered experiences that drive
         innovation and efficiency.
       </p>
+
       <div>
-        <Button className="font-bold py-6 text-base group">
-          Get in touch
-          <ArrowRight
-            size={30}
-            className="ml-4 rounded-full bg-primary-foreground/10 p-1.5 transition-all duration-300 -rotate-45 group-hover:rotate-0"
-          />
-        </Button>
+        <GetInTouchButton />
       </div>
 
-      <div className="flex flex-col gap-6">
-        <div className="flex flex-row justify-between mt-12">
-          <h2 className="font-bold text-2xl">My Projects</h2>
-          <Link
-            href="/projects"
-            className="flex flex-row items-center underline"
-          >
-            All Projects
-            <ArrowRight className="ml-2" size={18} />
-          </Link>
-        </div>
-
+      <SectionWrapper
+        title="My Projects"
+        link={{
+          label: "All Projects",
+          href: "/projects",
+        }}
+      >
         <ProjectList />
-      </div>
+      </SectionWrapper>
 
-      <div className="flex flex-col gap-6">
-        <div className="flex flex-row justify-between mt-12">
-          <h2 className="font-bold text-2xl">Stack</h2>
-          <Link href="/stack" className="flex flex-row items-center underline">
-            All Stack
-            <ArrowRight className="ml-2" size={18} />
-          </Link>
-        </div>
-
+      <SectionWrapper
+        title="My Stack"
+        link={{
+          label: "All Stack",
+          href: "/stack",
+        }}
+      >
         <StackList />
-      </div>
+      </SectionWrapper>
 
-      <div className="flex flex-col gap-6">
-        <div className="flex flex-row justify-between mt-12">
-          <h2 className="font-bold text-2xl">Writting</h2>
-          <Link
-            href="/writting"
-            className="flex flex-row items-center underline"
-          >
-            All Posts
-            <ArrowRight className="ml-2" size={18} />
-          </Link>
-        </div>
-
-        <PostList />
-      </div>
+      <SectionWrapper
+        title="Writting"
+        link={{ label: "All Posts", href: "/writing" }}
+      >
+        <PostList data={props?.posts ?? []} />
+      </SectionWrapper>
 
       <Card className="border rounded-md py-4 bg-secondary mt-12">
         <CardContent>

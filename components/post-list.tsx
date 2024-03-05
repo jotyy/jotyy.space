@@ -1,12 +1,16 @@
 "use client";
 
 import { PostItem } from "@/components/post-item";
-import { POSTS } from "@/lib/config";
+import { PageBlogPostFieldsFragment } from "@/lib/contentful/__generated/sdk";
 
-export function PostList() {
+export interface PostListProps {
+  data: any;
+}
+
+export function PostList({ data }: PostListProps) {
   return (
     <div className="flex flex-col gap-8">
-      {POSTS.map((post) => (
+      {data.map((post: PageBlogPostFieldsFragment) => (
         <PostItem key={post.title} {...post} />
       ))}
     </div>

@@ -21,13 +21,26 @@ export function PageContainer({ children, className }: PageContainerProps) {
 export interface PageHeaderProps {
   heading: string;
   description?: string;
+  className?: string;
+  children?: React.ReactNode;
 }
 
-export function PageHeader({ heading, description }: PageHeaderProps) {
+export function PageHeader({
+  heading,
+  description,
+  className,
+  children,
+}: PageHeaderProps) {
   return (
-    <header className="flex flex-col">
-      <h1 className="text-3xl font-bold">{heading}</h1>
-      <p className="text-muted-foreground">{description}</p>
+    <header
+      className={cn("flex flex-row justify-between items-center", className)}
+    >
+      <div className="flex flex-col">
+        <h1 className="text-3xl font-bold">{heading}</h1>
+        <p className="text-muted-foreground">{description}</p>
+      </div>
+
+      {children}
     </header>
   );
 }
