@@ -5,6 +5,7 @@ import { cn } from "@/utils/cn";
 import type { Metadata } from "next";
 import { Manrope as FontSans } from "next/font/google";
 import "./globals.css";
+import { NavHeader } from "@/components/nav-header";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -26,6 +27,7 @@ export default function RootLayout({
         </aside>
         <div className="flex flex-1">
           <ScrollArea className="flex flex-col" hasScrollTitle>
+            <NavHeader scrollTitle="Jotyy Space" />
             {children}
           </ScrollArea>
         </div>

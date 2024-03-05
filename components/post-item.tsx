@@ -25,7 +25,7 @@ export function PostItem({
         alt={title}
         width={200}
         height={160}
-        className="object-cover rounded-md w-full md:w-[200px] aspect-[4/3]"
+        className="object-cover rounded-md w-full bg-secondary md:w-[200px] aspect-[4/3]"
       />
       <div className="flex flex-col items-start">
         <p className="text-sm mt-2 text-muted-foreground">

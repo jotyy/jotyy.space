@@ -1,5 +1,6 @@
 "use client";
 
+import { NavHeader } from "@/components/nav-header";
 import { PageContainer } from "@/components/page-container";
 import { PostList } from "@/components/post-list";
 import { ProjectList } from "@/components/project-list";
