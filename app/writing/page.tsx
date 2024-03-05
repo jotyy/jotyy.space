@@ -1,54 +1,34 @@
 import { PageContainer, PageHeader } from "@/components/page-container";
 import { PostList } from "@/components/post-list";
-import { revalidateDuration } from "@/lib/constants";
-import { PageBlogPostOrder } from "@/lib/contentful/__generated/sdk";
-import { previewClient, client } from "@/lib/contentful/client";
+import {
+  PageBlogPostFieldsFragment,
+  PageBlogPostOrder,
+} from "@/lib/contentful/__generated/sdk";
+import { client, previewClient } from "@/lib/contentful/client";
 
 async function getAllPosts() {
   try {
-    const locale = "en-US";
     const preview = false;
     const gqlClient = preview ? previewClient : client;
 
-    const landingPageData = await gqlClient.pageLanding({ locale, preview });
-    const page = landingPageData.pageLandingCollection?.items[0];
-
     const blogPostsData = await gqlClient.pageBlogPostCollection({
-      locale,
       order: PageBlogPostOrder.PublishedDateDesc,
-      where: {
-        slug_not: page?.featuredBlogPost?.slug,
-      },
       preview,
     });
-    const posts = blogPostsData.pageBlogPostCollection?.items;
-
-    if (!page) {
-      return {
-        revalidate: revalidateDuration,
-        notFound: true,
-      };
-    }
+    const posts = blogPostsData.pageBlogPostCollection?.items ?? [];
 
     return {
-      revalidate: revalidateDuration,
-      props: {
-        previewActive: !!preview,
-        locale,
-        page,
-        posts,
-      },
+      posts: posts as PageBlogPostFieldsFragment[],
     };
   } catch {
     return {
-      revalidate: revalidateDuration,
-      notFound: true,
+      posts: [],
     };
   }
 }
 
 export default async function Writing() {
-  const data = await getAllPosts();
+  const { posts } = await getAllPosts();
 
   return (
     <PageContainer>
@@ -57,7 +37,9 @@ export default async function Writing() {
         description="At times I compose content on various topics."
       />
 
-      <PostList data={data.props?.posts ?? []} />
+      <div className="py-10">
+        <PostList data={posts ?? []} />
+      </div>
     </PageContainer>
   );
 }

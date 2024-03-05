@@ -8,56 +8,40 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { revalidateDuration } from "@/lib/constants";
-import { PageBlogPostOrder } from "@/lib/contentful/__generated/sdk";
+import {
+  PageBlogPostFieldsFragment,
+  PageBlogPostOrder,
+} from "@/lib/contentful/__generated/sdk";
 import { client, previewClient } from "@/lib/contentful/client";
 import Image from "next/image";
 
-async function getLandingPosts() {
+async function getLandingPosts(): Promise<{
+  posts: PageBlogPostFieldsFragment[];
+}> {
   try {
-    const locale = "en-US";
     const preview = false;
     const gqlClient = preview ? previewClient : client;
 
-    const landingPageData = await gqlClient.pageLanding({ locale, preview });
-    const page = landingPageData.pageLandingCollection?.items[0];
-
-    const blogPostsData = await gqlClient.pageBlogPostCollection({
+    const data = await gqlClient.pageBlogPostCollection({
       limit: 4,
-      locale,
-      order: PageBlogPostOrder.PublishedDateDesc,
-      where: {
-        slug_not: page?.featuredBlogPost?.slug,
-      },
       preview,
+      order: PageBlogPostOrder.PublishedDateDesc,
     });
-    const posts = blogPostsData.pageBlogPostCollection?.items;
-
-    if (!page) {
-      return {
-        revalidate: revalidateDuration,
-        notFound: true,
-      };
-    }
 
     return {
-      revalidate: revalidateDuration,
-      props: {
-        previewActive: !!preview,
-        locale,
-        page,
-        posts,
-      },
+      posts: (data.pageBlogPostCollection?.items ??
+        []) as PageBlogPostFieldsFragment[],
     };
-  } catch {
+  } catch (err) {
+    console.error("getLandingPosts", err);
     return {
-      revalidate: revalidateDuration,
-      notFound: true,
+      posts: [],
     };
   }
 }
 
 export default async function Home() {
-  const { props } = await getLandingPosts();
+  const { posts } = await getLandingPosts();
 
   return (
     <PageContainer>
@@ -107,7 +91,7 @@ export default async function Home() {
         title="Writting"
         link={{ label: "All Posts", href: "/writing" }}
       >
-        <PostList data={props?.posts ?? []} />
+        <PostList data={posts} />
       </SectionWrapper>
 
       <Card className="border rounded-md py-4 bg-secondary mt-12">

@@ -4,7 +4,7 @@ import { PostItem } from "@/components/post-item";
 import { PageBlogPostFieldsFragment } from "@/lib/contentful/__generated/sdk";
 
 export interface PostListProps {
-  data: any;
+  data: PageBlogPostFieldsFragment[];
 }
 
 export function PostList({ data }: PostListProps) {
