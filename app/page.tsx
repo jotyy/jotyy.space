@@ -86,7 +86,7 @@ export default function Home() {
       <Card className="border rounded-md py-4 bg-secondary mt-12">
         <CardContent>
           <h3 className="font-bold text-xl">Get Notifications</h3>
-          <p className="text-muted-foreground">
+          <p className="text-secondary-foreground">
             Subscribe to my newsletter and get notified when I publish new
             content.
           </p>

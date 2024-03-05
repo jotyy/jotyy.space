@@ -9,7 +9,7 @@ export function PageContainer({ children, className }: PageContainerProps) {
   return (
     <div
       className={cn(
-        "container max-w-4xl flex min-h-screen flex-col p-24 gap-4",
+        "container px-8 max-w-4xl flex min-h-screen flex-col py-24 gap-4",
         className
       )}
     >

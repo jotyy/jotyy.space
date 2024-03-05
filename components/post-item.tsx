@@ -18,14 +18,14 @@ export function PostItem({
   tags,
 }: PostItemProps) {
   return (
-    <div className="flex flex-row gap-6">
+    <div className="flex flex-col md:flex-row gap-4 md:gap-6">
       <Image
         src={cover}
         loading="lazy"
         alt={title}
         width={200}
         height={160}
-        className="object-cover rounded-md aspect-[4/3]"
+        className="object-cover rounded-md w-full md:w-[200px] aspect-[4/3]"
       />
       <div className="flex flex-col items-start">
         <p className="text-sm mt-2 text-muted-foreground">

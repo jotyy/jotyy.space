@@ -155,35 +155,40 @@ export const POSTS = [
     title: "How to use Tailwind CSS with Next.js",
     description: "A guide to setting up Tailwind CSS with Next.js",
     date: "2021-10-01",
-    cover: "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    cover:
+      "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tags: ["Next.js", "Tailwind CSS"],
   },
   {
     title: "How to use Vite with React",
     description: "A guide to setting up Vite with React",
     date: "2021-09-01",
-    cover: "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    cover:
+      "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tags: ["Vite", "React"],
   },
   {
     title: "How to use Vite with Vue",
     description: "A guide to setting up Vite with Vue",
     date: "2021-08-01",
-    cover: "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    cover:
+      "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tags: ["Vite", "Vue"],
   },
   {
     title: "How to use Vite with Svelte",
     description: "A guide to setting up Vite with Svelte",
     date: "2021-07-01",
-    cover: "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    cover:
+      "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tags: ["Vite", "Svelte"],
   },
   {
     title: "How to use Vite with Preact",
     description: "A guide to setting up Vite with Preact",
     date: "2021-06-01",
-    cover: "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    cover:
+      "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     tags: ["Vite", "Preact"],
   },
 ];

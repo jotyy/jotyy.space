@@ -11,8 +11,8 @@ export function StackItem({ title, icon, description }: StackItemProps) {
     <div className="p-4 flex rounded-md bg-secondary items-center gap-3">
       <StackIcon name={icon} className="w-8 h-8" />
       <div>
-        <h6 className="font-bold text-base">{title}</h6>
-        <p className="text-muted-foreground text-xs">{description}</p>
+        <h2 className="font-bold text-base">{title}</h2>
+        <p className="text-secondary-foreground text-xs">{description}</p>
       </div>
     </div>
   );
