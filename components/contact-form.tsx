@@ -1,8 +1,6 @@
 "use client";
 
-import { useForm } from "react-hook-form";
-import { z } from "zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { Button } from "@/components/ui/button";
 import {
   Form,
   FormControl,
@@ -14,17 +12,15 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-
-const contactFormSchema = z.object({
-  name: z.string().min(1),
-  email: z.string().email(),
-  message: z.string().min(1),
-});
-
-type ContactFormValues = z.infer<typeof contactFormSchema>;
+import { ContactFormValues, contactFormSchema } from "@/lib/schema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Spinner } from "@phosphor-icons/react";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { toast } from "sonner";
 
 export function ContactForm() {
+  const [isSending, setIsSending] = useState(false);
   const form = useForm<ContactFormValues>({
     defaultValues: {
       name: "",
@@ -35,8 +31,17 @@ export function ContactForm() {
   });
 
   const onSubmit = (values: ContactFormValues) => {
-    // TODO send the form data to the server
-    console.log(values);
+    setIsSending(true);
+    fetch("/api/send", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+    })
+      .then(() => toast.success("Message sent! I will reply to you soon."))
+      .catch(() => toast.error("Failed to send message."))
+      .finally(() => setIsSending(false));
   };
 
   return (
@@ -102,7 +107,10 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit">Send Message</Button>
+        <Button type="submit" disabled={isSending}>
+          {isSending && <Spinner className="animate-spin mr-2" />}
+          Send Message
+        </Button>
       </form>
     </Form>
   );

@@ -7,6 +7,8 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/utils/cn";
 import type { Metadata } from "next";
 import { Manrope as FontSans } from "next/font/google";
+import { Toaster } from "@/components/ui/sonner";
+
 import "./globals.css";
 
 const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
@@ -42,6 +44,7 @@ export default function RootLayout({
             {children}
           </ScrollArea>
         </div>
+        <Toaster />
       </body>
     </html>
   );

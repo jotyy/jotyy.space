@@ -6,11 +6,24 @@ import dynamic from "next/dynamic";
 
 import { CodeBlock } from "@/components/contentful/code-block";
 import { Link } from "@/components/link";
-import { PageBlogPostFieldsFragment } from "@/lib/contentful/__generated/sdk";
+import {
+  ComponentRichImage,
+  PageBlogPostFieldsFragment,
+} from "@/lib/contentful/__generated/sdk";
 import { dasherize } from "@/utils";
 const DynamicIframe = dynamic(() => import("@/components/contentful/iframe"));
 
-function options(links: any) {
+export type EmbeddedEntryType = ComponentRichImage | null;
+
+function options(
+  links:
+    | {
+        entries: {
+          block: Array<EmbeddedEntryType>;
+        };
+      }
+    | any
+) {
   const findAsset = (id: string) =>
     links?.assets.block.find((item: any) => item.sys.id === id);
   const findInlineEntry = (id: string) =>
@@ -162,5 +175,6 @@ export type Content = PageBlogPostFieldsFragment["content"];
 
 export const RichText = ({ content }: { content: Content }) => {
   if (!content) return null;
+  console.log("content", content.json, content.links);
   return documentToReactComponents(content.json, options(content.links));
 };
