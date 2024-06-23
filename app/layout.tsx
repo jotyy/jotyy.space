@@ -6,12 +6,11 @@ import { SideBar } from "@/components/side-bar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/utils/cn";
 import type { Metadata } from "next";
-import { Manrope as FontSans } from "next/font/google";
+import { GeistMono } from "geist/font/mono";
+import { GeistSans } from "geist/font/sans";
 import { Toaster } from "@/components/ui/sonner";
 
 import "./globals.css";
-
-const fontSans = FontSans({ subsets: ["latin"], variable: "--font-sans" });
 
 export default function RootLayout({
   children,
@@ -21,12 +20,13 @@ export default function RootLayout({
   const { isEnabled } = draftMode();
 
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html
+      lang="en"
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      suppressHydrationWarning
+    >
       <body
-        className={cn(
-          "min-h-screen flex bg-background font-sans antialiased",
-          fontSans.variable
-        )}
+        className={cn("min-h-screen flex bg-background font-sans antialiased")}
       >
         {isEnabled && (
           <div className="absolute bottom-0 left-0 right-0 z-50 flex h-12 w-full items-center justify-center bg-green-500 text-center text-sm font-medium text-white">
