@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import { highlight } from "sugar-high";
-import { LazyMotion, domAnimation, m } from "framer-motion";
+import { LazyMotion, domAnimation, motion } from "framer-motion";
 
 import { Button } from "@/components/ui/button";
 
@@ -46,13 +46,14 @@ export function CodeBlock({ title, code }: CodeBlockProps) {
           onClick={onCopy}
         >
           <LazyMotion features={domAnimation}>
-            <m.span
+            <motion.span
               key={copied ? "copied" : "copy"}
               initial={{ opacity: 0, y: 2 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -2 }}
-              className="inline-flex w-14 items-center justify-center gap-0.5"
               transition={{ duration: 0.3 }}
+              // @ts-ignore
+              className="inline-flex w-14 items-center justify-center gap-0.5"
             >
               {copied ? (
                 <>
@@ -92,7 +93,7 @@ export function CodeBlock({ title, code }: CodeBlockProps) {
                   Copy
                 </>
               )}
-            </m.span>
+            </motion.span>
           </LazyMotion>
         </Button>
       </div>
