@@ -12,12 +12,14 @@ import { Toaster } from "@/components/ui/sonner";
 
 import "./globals.css";
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  const { isEnabled } = draftMode();
+export default async function RootLayout(
+  {
+    children,
+  }: Readonly<{
+    children: React.ReactNode;
+  }>
+) {
+  const { isEnabled } = await draftMode();
 
   return (
     <html

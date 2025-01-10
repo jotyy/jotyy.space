@@ -14,7 +14,7 @@ import Image from "next/image";
 // }
 
 async function fetchData(slug: string) {
-  const { isEnabled } = draftMode();
+  const { isEnabled } = await draftMode();
   const data = await getPost(slug, false, "en-US");
   if (!data.pageBlogPostCollection) notFound();
 
@@ -23,11 +23,12 @@ async function fetchData(slug: string) {
   };
 }
 
-export default async function WritingSlug({
-  params,
-}: {
-  params: { slug: string };
-}) {
+export default async function WritingSlug(
+  props: {
+    params: Promise<{ slug: string }>;
+  }
+) {
+  const params = await props.params;
   const { slug } = params;
   const { data } = await fetchData(slug);
 

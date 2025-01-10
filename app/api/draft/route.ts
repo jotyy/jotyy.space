@@ -11,6 +11,6 @@ export async function GET(request: NextRequest) {
   }
 
   const slug = searchParams.get("slug");
-  draftMode().enable();
+  (await draftMode()).enable();
   redirect(slug ?? "/");
 }

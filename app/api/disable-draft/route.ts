@@ -9,7 +9,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Invalid token" }, { status: 401 });
   }
 
-  draftMode().disable();
+  (await draftMode()).disable();
   return NextResponse.json(
     { messsage: "Draft mode is disabled successfully", now: Date.now() },
     { status: 200 }
