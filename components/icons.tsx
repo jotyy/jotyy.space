@@ -161,6 +161,69 @@ export const Icons = {
       />
     </svg>
   ),
+  arrowLeft: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      className={cn("w-4 h-4", props.className)}
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m4 12l6-6m-6 6l6 6m-6-6h10.5m5.5 0h-2.5"
+      />
+    </svg>
+  ),
+  arrowUpRight: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      className={cn("w-4 h-4", props.className)}
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        d="m6 18l2.5-2.5M18 6H9m9 0v9m0-9l-6.5 6.5"
+      />
+    </svg>
+  ),
+  command: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      className={cn("w-4 h-4", props.className)}
+      {...props}
+    >
+      <g fill="none" stroke="currentColor" strokeWidth="2">
+        <path strokeLinecap="round" d="M8 13v3h8V8H8v1" />
+        <path d="M16 16.001h3a3 3 0 1 1-3 3zm-7.999 0h-3a3 3 0 1 0 3 3zM16 8h3a3 3 0 1 0-3-3zM8.001 8h-3a3 3 0 1 1 3-3z" />
+      </g>
+    </svg>
+  ),
+  spinner: (props: IconProps) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      className={cn("w-4 h-4", props.className)}
+      {...props}
+    >
+      <path
+        fill="none"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeWidth="2"
+        d="M8.124 5a8 8 0 1 0 7.752 0"
+      />
+    </svg>
+  ),
 };
 
 export const SocialIcons = {

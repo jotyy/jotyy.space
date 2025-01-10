@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 import { cn } from "@/lib/utils";
-import { ArrowUpRight, At } from "@phosphor-icons/react";
+import { Icons } from "@/components/icons";
 
 export interface NavigationLinkProps {
   href: string;
@@ -17,7 +17,7 @@ export interface NavigationLinkProps {
 export const NavigationLink = memo(
   ({ href, label, icon, shortcutNumber }: NavigationLinkProps) => {
     const pathname = usePathname();
-    const iconCmp = icon ?? <At size={16} />;
+    const iconCmp = icon ?? <Icons.at />;
 
     const isInternal = href.startsWith("/");
     if (!isInternal) {
@@ -32,7 +32,7 @@ export const NavigationLink = memo(
           <span className="inline-flex items-center gap-2 font-medium">
             {iconCmp} {label}
           </span>
-          <ArrowUpRight size={16} />
+          <Icons.arrowUpRight />
         </a>
       );
     }

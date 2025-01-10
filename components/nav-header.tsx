@@ -7,7 +7,7 @@ import Balancer from "react-wrap-balancer";
 import { Button } from "@/components/ui/button";
 import { MobileDrawer } from "@/components/mobile-drawer";
 import { MOBILE_SCROLL_THRESHOLD, SCROLL_AREA_ID } from "@/lib/config";
-import { ArrowLeft } from "@phosphor-icons/react";
+import { Icons } from "@/components/icons";
 
 export interface FloatingHeaderProps {
   scrollTitle?: string;
@@ -67,7 +67,7 @@ export const NavHeader = memo(
                   asChild
                 >
                   <Link href={goBackLink} title="Go back">
-                    <ArrowLeft size={18} />
+                    <Icons.arrowLeft />
                   </Link>
                 </Button>
               ) : (

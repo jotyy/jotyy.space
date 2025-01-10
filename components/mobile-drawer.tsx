@@ -2,14 +2,14 @@ import { Drawer } from "vaul";
 
 import { MenuContent } from "@/components/menu-content";
 import { Button } from "@/components/ui/button";
-import { Command } from "@phosphor-icons/react";
+import { Icons } from "@/components/icons";
 
 export function MobileDrawer() {
   return (
     <Drawer.Root shouldScaleBackground>
       <Button variant="ghost" size="icon" title="Toggle drawer" asChild>
         <Drawer.Trigger>
-          <Command size={20} />
+          <Icons.command className="size-5" />
         </Drawer.Trigger>
       </Button>
       <Drawer.Portal>

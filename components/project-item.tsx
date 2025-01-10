@@ -1,5 +1,4 @@
 import { Badge } from "@/components/ui/badge";
-import { ArrowSquareOut } from "@phosphor-icons/react";
 import Image from "next/image";
 import Link from "next/link";
 

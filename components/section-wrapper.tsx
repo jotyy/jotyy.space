@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ArrowRight } from "@phosphor-icons/react";
+import { Icons } from "@/components/icons";
 import Link from "next/link";
 
 export interface SectionWrapperProps {
@@ -26,7 +26,7 @@ export function SectionWrapper({
         <h2 className="font-bold text-2xl">{title}</h2>
         <Link href={link.href} className="flex flex-row items-center underline">
           {link.label}
-          <ArrowRight className="ml-2" size={18} />
+          <Icons.arrowRight className="ml-2" />
         </Link>
       </div>
 
