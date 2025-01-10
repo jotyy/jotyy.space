@@ -21,7 +21,7 @@ export function ProjectItem({
   return (
     <div className="flex flex-col items-start">
       <Link href={href || ""} target="_blank">
-        <div className="bg-gradient-to-tl from-[#757F9A] to-[#D7DDE8] w-full aspect-[4/3] rounded-lg overflow-hidden p-4 relative cursor-pointer">
+        <div className="bg-gradient-to-tl from-[#757F9A] to-[#D7DDE8] w-full aspect-[4/3] rounded-lg overflow-hidden relative cursor-pointer">
           <Image
             src={cover}
             loading="lazy"
@@ -30,9 +30,6 @@ export function ProjectItem({
             height={300}
             className="object-cover rounded-md w-full h-full transition-all hover:scale-110 aspect-[4/3]"
           />
-          {href && (
-            <ArrowSquareOut className="absolute top-1 right-1" size={12} />
-          )}
         </div>
       </Link>
       <p className="text-sm mt-2">{description}</p>

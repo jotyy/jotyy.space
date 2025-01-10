@@ -1,37 +1,26 @@
-import {
-  At,
-  Bookmark,
-  CodeBlock,
-  GithubLogo,
-  LinkedinLogo,
-  MagicWand,
-  PaperPlaneTilt,
-  PencilLine,
-  Sparkle,
-  TwitterLogo,
-} from "@phosphor-icons/react";
+import { Icons, SocialIcons } from "@/components/icons";
 
 export const PROFILES = {
   twitter: {
     title: "X (Twitter)",
     username: "jotyy",
     url: "https://twitter.com/intent/user?screen_name=jotyy3",
-    icon: <TwitterLogo size={20} />,
+    icon: <SocialIcons.x />,
   },
   github: {
     title: "GitHub",
     url: "https://github.com/jotyy",
-    icon: <GithubLogo size={20} />,
+    icon: <SocialIcons.github />,
   },
   linkedin: {
     title: "LinkedIn",
     url: "https://www.linkedin.com/in/jotyy3",
-    icon: <LinkedinLogo size={20} />,
+    icon: <SocialIcons.linkedin />,
   },
   readcv: {
     title: "Read.cv",
     url: "https://read.cv/jotyy",
-    icon: <At size={20} />,
+    icon: <Icons.at />,
   },
 };
 
@@ -39,32 +28,32 @@ export const LINKS = [
   {
     href: "/",
     label: "Home",
-    icon: <Sparkle size={18} weight="duotone" />,
+    icon: <Icons.home />,
   },
   {
     href: "/writing",
     label: "Writing",
-    icon: <PencilLine size={18} weight="duotone" />,
+    icon: <Icons.blog />,
   },
   {
     href: "/projects",
     label: "Projects",
-    icon: <CodeBlock size={18} weight="duotone" />,
+    icon: <Icons.projects />,
   },
   {
     href: "/stack",
     label: "Stack",
-    icon: <MagicWand size={18} weight="duotone" />,
+    icon: <Icons.stack />,
   },
   {
     href: "/bookmarks",
     label: "Bookmarks",
-    icon: <Bookmark size={18} weight="duotone" />,
+    icon: <Icons.bookmark />,
   },
   {
     href: "/contact",
     label: "Contact",
-    icon: <PaperPlaneTilt size={18} weight="duotone" />,
+    icon: <Icons.contact />,
   },
 ];
 
@@ -122,6 +111,23 @@ export const PROJECTS = [
 ];
 
 export const STACKS = {
+  design: [
+    {
+      title: "Figma",
+      icon: "figma",
+      description: "Design Tool",
+    },
+    {
+      title: "Framer",
+      icon: "framer",
+      description: "Animation Tool",
+    },
+    {
+      title: "Blender",
+      icon: "blender",
+      description: "3D Modeling Tool",
+    },
+  ],
   tools: [
     {
       title: "AWS",

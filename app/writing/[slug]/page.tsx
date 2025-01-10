@@ -60,7 +60,7 @@ export default async function WritingSlug(
             heading={title ?? "Blog Post"}
             className="mb-6 flex flex-col gap-3"
           >
-            <time dateTime={postDate} className="text-gray-400">
+            <time dateTime={postDate} className="text-neutral-400">
               {dateString}
             </time>
           </PageHeader>

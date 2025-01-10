@@ -6,11 +6,15 @@ import { SideBar } from "@/components/side-bar";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { cn } from "@/utils/cn";
 import type { Metadata } from "next";
-import { GeistMono } from "geist/font/mono";
-import { GeistSans } from "geist/font/sans";
 import { Toaster } from "@/components/ui/sonner";
+import { Inter } from "next/font/google";
 
 import "./globals.css";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+});
 
 export default async function RootLayout(
   {
@@ -24,7 +28,7 @@ export default async function RootLayout(
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${inter.variable}`}
       suppressHydrationWarning
     >
       <body
@@ -41,7 +45,7 @@ export default async function RootLayout(
           <SideBar className="relative hidden lg:flex" />
         </aside>
         <div className="flex flex-1">
-          <ScrollArea className="flex flex-col" hasScrollTitle>
+          <ScrollArea className="flex flex-col pb-8" hasScrollTitle>
             <NavHeader scrollTitle="Jotyy" />
             {children}
           </ScrollArea>
@@ -79,8 +83,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: `jotyy3`,
-    creator: `@jotyy3`,
+    site: "jotyy_ai_mvp",
+    creator: "jotyy_ai_mvp",
   },
   other: {
     pinterest: "nopin",

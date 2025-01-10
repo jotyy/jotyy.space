@@ -1,7 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "@phosphor-icons/react";
+import { Icons } from "@/components/icons";
 import { useRouter } from "next/navigation";
 
 export function GetInTouchButton() {
@@ -13,10 +13,9 @@ export function GetInTouchButton() {
       onClick={() => router.push("/contact")}
     >
       Get in touch
-      <ArrowRight
-        size={30}
-        className="ml-4 rounded-full bg-primary-foreground/10 p-1.5 transition-all duration-300 -rotate-45 group-hover:rotate-0"
-      />
+      <div className="ml-4 rounded-full bg-primary-foreground/10 p-1.5 transition-all duration-300 -rotate-45 group-hover:rotate-0">
+        <Icons.arrowRight />
+      </div>
     </Button>
   );
 }

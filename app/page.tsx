@@ -88,7 +88,7 @@ export default async function Home() {
       </SectionWrapper>
 
       <SectionWrapper
-        title="Writting"
+        title="Writing"
         link={{ label: "All Posts", href: "/writing" }}
       >
         <PostList data={posts} />
