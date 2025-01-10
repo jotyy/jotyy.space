@@ -1,5 +1,6 @@
 "use client";
 
+import { Icons } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import {
   Form,
@@ -14,7 +15,6 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { ContactFormValues, contactFormSchema } from "@/lib/schema";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { Spinner } from "@phosphor-icons/react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
@@ -108,7 +108,7 @@ export function ContactForm() {
           )}
         />
         <Button type="submit" disabled={isSending}>
-          {isSending && <Spinner className="animate-spin mr-2" />}
+          {isSending && <Icons.spinner className="animate-spin mr-2" />}
           Send Message
         </Button>
       </form>
