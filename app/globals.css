@@ -153,4 +153,12 @@
   .scrollable-area {
     @apply h-full max-h-dynamic-screen min-h-dynamic-screen overflow-y-auto overflow-x-hidden;
   }
+
+  .social-button-minimal {
+    @apply bg-white border border-neutral-200 text-neutral-600;
+    @apply hover:bg-neutral-50 hover:border-neutral-300 hover:text-neutral-900;
+    @apply active:bg-neutral-100 active:border-neutral-400;
+    @apply transition-all duration-200 ease-out;
+    @apply shadow-sm hover:shadow-md;
+  }
 }

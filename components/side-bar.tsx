@@ -1,4 +1,5 @@
 "use client";
+
 import Link from "next/link";
 
 import { MenuContent } from "@/components/menu-content";
@@ -12,8 +13,8 @@ const keyCodePathnameMapping: Record<string, string> = {
   Digit2: "/writing",
   Digit3: "/projects",
   Digit4: "/stack",
-  Digit5: "/bookmarks",
-  Digit6: "/contact",
+  // Digit5: "/bookmarks",
+  Digit5: "/contact",
 };
 
 export interface SideBarProps {

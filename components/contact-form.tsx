@@ -107,7 +107,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={isSending}>
+        <Button type="submit" disabled={isSending} className="w-fit">
           {isSending && <Icons.spinner className="animate-spin mr-2" />}
           Send Message
         </Button>

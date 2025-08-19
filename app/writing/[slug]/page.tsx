@@ -47,7 +47,7 @@ export default async function WritingSlug(
     datePublished,
     author: {
       "@type": "Person",
-      name: "Jotyy",
+      name: "Joshua",
     },
     url: `https://jotyy.vercel.app/writing/${slug}`,
   };

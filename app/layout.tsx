@@ -45,9 +45,11 @@ export default async function RootLayout(
           <SideBar className="relative hidden lg:flex" />
         </aside>
         <div className="flex flex-1">
-          <ScrollArea className="flex flex-col pb-8" hasScrollTitle>
+          <ScrollArea className="flex flex-col" hasScrollTitle>
             <NavHeader scrollTitle="Jotyy" />
-            {children}
+            <div className="pb-12">
+              {children}
+            </div>
           </ScrollArea>
         </div>
         <Toaster />

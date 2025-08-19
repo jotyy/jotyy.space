@@ -1,7 +1,7 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { Icons } from "@/components/icons";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export interface SectionWrapperProps {
@@ -24,9 +24,8 @@ export function SectionWrapper({
     <div className={cn("flex flex-col gap-6", className)}>
       <div className="flex flex-row justify-between mt-12">
         <h2 className="font-bold text-2xl">{title}</h2>
-        <Link href={link.href} className="flex flex-row items-center underline">
-          {link.label}
-          <Icons.arrowRight className="ml-2" />
+        <Link href={link.href} className="flex items-center underline">
+          <Icons.arrowRight />
         </Link>
       </div>
 

@@ -53,24 +53,24 @@ export default async function Home() {
         loading="lazy"
         className="rounded-full"
       />
-      <h5 className="font-bold text-xl">Hey, it&apos;s Joshua</h5>
-      <h1 className="font-bold text-4xl leading-normal">
-        Building AI products & experiences.
-      </h1>
-      <p className="text-muted-foreground">
-        I&apos;m a software engineer with 8 years of experience specializing in
-        B2B, B2C solutions, creating user-centered experiences that drive
-        innovation and efficiency.
-      </p>
-
       <div>
-        <GetInTouchButton />
+        <h5 className="font-bold text-xl">Hey, it&apos;s Joshua</h5>
+        <h1 className="font-bold text-4xl leading-normal mt-2">
+          Building AI products & experiences.
+        </h1>
+        <p className="text-muted-foreground">
+          I&apos;m a software engineer with 8 years of experience specializing
+          in B2B, B2C solutions, creating user-centered experiences that drive
+          innovation and efficiency.
+        </p>
       </div>
 
+      <GetInTouchButton />
+
       <SectionWrapper
-        title="My Projects"
+        title="My Works"
         link={{
-          label: "All Projects",
+          label: "View all",
           href: "/projects",
         }}
       >
@@ -80,7 +80,7 @@ export default async function Home() {
       <SectionWrapper
         title="My Stack"
         link={{
-          label: "All Stack",
+          label: "View all",
           href: "/stack",
         }}
       >
@@ -89,7 +89,7 @@ export default async function Home() {
 
       <SectionWrapper
         title="Writing"
-        link={{ label: "All Posts", href: "/writing" }}
+        link={{ label: "View all", href: "/writing" }}
       >
         <PostList data={posts} />
       </SectionWrapper>

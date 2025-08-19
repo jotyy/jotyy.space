@@ -51,7 +51,7 @@ export const MenuContent = () => {
             size="icon"
             variant="secondary"
             aria-label={profile.title}
-            className="rounded-full"
+            className="rounded-full social-button-minimal"
             onClick={() => window.open(profile.url)}
           >
             {profile.icon}

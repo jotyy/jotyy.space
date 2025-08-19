@@ -175,6 +175,5 @@ export type Content = PageBlogPostFieldsFragment["content"];
 
 export const RichText = ({ content }: { content: Content }) => {
   if (!content) return null;
-  console.log("content", content.json, content.links);
   return documentToReactComponents(content.json, options(content.links));
 };

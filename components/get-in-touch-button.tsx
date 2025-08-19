@@ -9,7 +9,7 @@ export function GetInTouchButton() {
 
   return (
     <Button
-      className="font-bold py-6 text-base group"
+      className="font-bold py-6 text-base group w-fit"
       onClick={() => router.push("/contact")}
     >
       Get in touch

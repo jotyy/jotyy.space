@@ -45,11 +45,11 @@ export const LINKS = [
     label: "Stack",
     icon: <Icons.stack />,
   },
-  {
-    href: "/bookmarks",
-    label: "Bookmarks",
-    icon: <Icons.bookmark />,
-  },
+  // {
+  //   href: "/bookmarks",
+  //   label: "Bookmarks",
+  //   icon: <Icons.bookmark />,
+  // },
   {
     href: "/contact",
     label: "Contact",
