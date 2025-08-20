@@ -40,13 +40,13 @@ export const SideBar = ({ title, href, isInner, className }: SideBarProps) => {
   return (
     <ScrollArea
       className={cn(
-        "hidden bg-neutral-50 lg:flex lg:flex-col lg:border-r",
+        "hidden bg-zinc-50 dark:bg-zinc-900 lg:flex lg:flex-col lg:border-r",
         isInner ? "lg:w-80 xl:w-96" : "lg:w-60 xl:w-72",
         className
       )}
     >
       {title && (
-        <div className="sticky top-0 z-10 border-b bg-neutral-50 px-5 py-3">
+        <div className="sticky top-0 z-10 border-b bg-zinc-50 dark:bg-zinc-950 px-5 py-3">
           <div className="flex items-center justify-between">
             <div className="text-sm font-semibold tracking-tight">
               {href ? <Link href={href}>{title}</Link> : <span>{title}</span>}
@@ -54,7 +54,7 @@ export const SideBar = ({ title, href, isInner, className }: SideBarProps) => {
           </div>
         </div>
       )}
-      <div className="bg-neutral-50 p-3">
+      <div className="bg-zinc-50 dark:bg-zinc-900 p-3">
         <MenuContent />
       </div>
     </ScrollArea>

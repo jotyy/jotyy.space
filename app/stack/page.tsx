@@ -4,7 +4,10 @@ import { StackList } from "@/components/stack-list";
 export default function Stack() {
   return (
     <PageContainer>
-      <PageHeader heading="Stack" />
+      <PageHeader
+        heading="Stack"
+        description="What I use? see below."
+      />
       <StackList />
     </PageContainer>
   );

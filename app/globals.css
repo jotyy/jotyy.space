@@ -105,7 +105,7 @@
   }
 
   ul > li::marker {
-    @apply text-neutral-400;
+    @apply text-zinc-400;
   }
 
   li div {
@@ -120,7 +120,7 @@
   }
 
   hr {
-    @apply my-6 border-neutral-200;
+    @apply my-6 border-zinc-200;
   }
 
   img,
@@ -129,7 +129,7 @@
   }
 
   pre {
-    @apply overflow-x-auto break-normal rounded-b-lg border-x border-b border-neutral-200 bg-white p-3 text-left text-xs leading-normal;
+    @apply overflow-x-auto break-normal rounded-b-lg border-x border-b border-zinc-200 bg-white p-3 text-left text-xs leading-normal;
   }
 
   code {
@@ -147,7 +147,7 @@
 
 @layer components {
   .link-card {
-    @apply -mx-1.5 -my-1 rounded bg-transparent px-1.5 py-1 transition-colors duration-300 hover:bg-neutral-200;
+    @apply -mx-1.5 -my-1 rounded bg-transparent px-1.5 py-1 transition-colors duration-300 hover:bg-zinc-200 dark:hover:bg-zinc-800;
   }
 
   .scrollable-area {
@@ -155,9 +155,9 @@
   }
 
   .social-button-minimal {
-    @apply bg-white border border-neutral-200 text-neutral-600;
-    @apply hover:bg-neutral-50 hover:border-neutral-300 hover:text-neutral-900;
-    @apply active:bg-neutral-100 active:border-neutral-400;
+    @apply bg-white border border-zinc-200 text-zinc-600;
+    @apply hover:bg-zinc-50 hover:border-zinc-300 hover:text-zinc-900;
+    @apply active:bg-zinc-100 active:border-zinc-400;
     @apply transition-all duration-200 ease-out;
     @apply shadow-sm hover:shadow-md;
   }

@@ -36,7 +36,7 @@ export function PageHeader({
       className={cn("flex flex-row justify-between items-center", className)}
     >
       <div className="flex flex-col">
-        <h1 className="text-3xl font-bold">{heading}</h1>
+        <h1 className="text-3xl font-semibold text-foreground">{heading}</h1>
         <p className="text-muted-foreground">{description}</p>
       </div>
 

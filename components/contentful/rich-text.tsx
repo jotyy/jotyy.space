@@ -94,7 +94,7 @@ function options(
         <li>{children}</li>
       ),
       [BLOCKS.QUOTE]: (_: unknown, children: React.ReactNode) => (
-        <blockquote className="mb-4 rounded-r-lg border-l-2 border-neutral-200 px-4 font-medium">
+        <blockquote className="mb-4 rounded-r-lg border-l-2 border-zinc-200 px-4 font-medium">
           {children}
         </blockquote>
       ),
@@ -113,7 +113,7 @@ function options(
               className="animate-reveal"
             />
             {asset.description && (
-              <figcaption className="break-all text-center text-xs font-light text-neutral-500">
+              <figcaption className="break-all text-center text-xs font-light text-zinc-500">
                 {asset.description}
               </figcaption>
             )}

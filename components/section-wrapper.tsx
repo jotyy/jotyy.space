@@ -23,7 +23,9 @@ export function SectionWrapper({
   return (
     <div className={cn("flex flex-col gap-6", className)}>
       <div className="flex flex-row justify-between mt-12">
-        <h2 className="font-bold text-2xl">{title}</h2>
+        <h2 className="font-semibold text-2xl text-zinc-900 dark:text-zinc-100">
+          {title}
+        </h2>
         <Link href={link.href} className="flex items-center underline">
           <Icons.arrowRight />
         </Link>

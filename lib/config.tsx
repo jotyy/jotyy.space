@@ -1,10 +1,55 @@
 import { Icons, SocialIcons } from "@/components/icons";
+import {
+  AmazonWebServicesDark,
+  AmazonWebServicesLight,
+  BetterAuthDark,
+  BetterAuthLight,
+  CSS,
+  ClaudeAI,
+  Cloudflare,
+  CursorDark,
+  CursorLight,
+  DrizzleORMDark,
+  DrizzleORMLight,
+  ExpressjsDark,
+  ExpressjsLight,
+  Figma,
+  FramerDark,
+  FramerLight,
+  GitHubDark,
+  GitHubLight,
+  HTML5,
+  Hono,
+  JavaScript,
+  MongoDB,
+  MotionDark,
+  MotionLight,
+  MySQL,
+  Neon,
+  Nextjs,
+  Nodejs,
+  OpenAIDark,
+  OpenAILight,
+  PerplexityAI,
+  PostgreSQL,
+  Postman,
+  PrismaDark,
+  PrismaLight,
+  ReactLight,
+  ReactQuery,
+  TRPC,
+  TailwindCSS,
+  TypeScript,
+  Ubuntu,
+  VercelDark,
+  VercelLight,
+} from "@ridemountainpig/svgl-react";
 
 export const PROFILES = {
   twitter: {
     title: "X (Twitter)",
     username: "jotyy",
-    url: "https://twitter.com/intent/user?screen_name=jotyy3",
+    url: "https://twitter.com/intent/user?screen_name=jotyy_ai",
     icon: <SocialIcons.x />,
   },
   github: {
@@ -111,102 +156,56 @@ export const PROJECTS = [
 ];
 
 export const STACKS = {
-  design: [
-    {
-      title: "Figma",
-      icon: "figma",
-      description: "Design Tool",
-    },
-    {
-      title: "Framer",
-      icon: "framer",
-      description: "Animation Tool",
-    },
-    {
-      title: "Blender",
-      icon: "blender",
-      description: "3D Modeling Tool",
-    },
+  languages: [
+    { title: "JavaScript", icon: JavaScript },
+    { title: "TypeScript", icon: TypeScript },
+    { title: "HTML", icon: HTML5 },
+    { title: "CSS", icon: CSS },
+    { title: "NodeJs", icon: Nodejs },
+    { title: "SQL", icon: MySQL },
+    { title: "Postgres", icon: PostgreSQL },
+    { title: "MongoDB", icon: MongoDB },
+  ],
+  frameworks: [
+    { title: "React", icon: ReactLight },
+    { title: "NextJs", icon: Nextjs },
+    { title: "HonoJs", icon: Hono },
+    { title: "ExpressJs", icon: ExpressjsLight, darkIcon: ExpressjsDark },
+    { title: "TailwindCSS", icon: TailwindCSS },
+    { title: "TankStack Query", icon: ReactQuery },
+    { title: "TRPC", icon: TRPC },
+    { title: "Motion.dev", icon: MotionLight, darkIcon: MotionDark },
+    { title: "BetterAuth", icon: BetterAuthLight, darkIcon: BetterAuthDark },
+  ],
+  ai: [
+    { title: "OpenAI", icon: OpenAILight, darkIcon: OpenAIDark },
+    { title: "Claude", icon: ClaudeAI },
+    { title: "Perplexity", icon: PerplexityAI },
+    { title: "Cursor", icon: CursorLight, darkIcon: CursorDark },
   ],
   tools: [
+    { title: "Drizzle", icon: DrizzleORMLight, darkIcon: DrizzleORMDark },
+    { title: "Prisma", icon: PrismaLight, darkIcon: PrismaDark },
+    { title: "NeonDB", icon: Neon },
+  ],
+  devops: [
+    { title: "Github", icon: GitHubLight, darkIcon: GitHubDark },
     {
       title: "AWS",
-      icon: "aws",
-      description: "Amazon Web Services",
+      icon: AmazonWebServicesLight,
+      darkIcon: AmazonWebServicesDark,
     },
-    {
-      title: "VS Code",
-      icon: "vscode",
-      description: "Code Editor",
-    },
-    {
-      title: "Figma",
-      icon: "figma",
-      description: "Design Tool",
-    },
-    {
-      title: "Github Copilot",
-      icon: "copilotgithub",
-      description: "AI Pair Programming",
-    },
-    {
-      title: "Arc",
-      icon: "arc",
-      description: "Browser",
-    },
-    {
-      title: "Docker",
-      icon: "docker",
-      description: "Containerization",
-    },
-    {
-      title: "Framer",
-      icon: "framer",
-      description: "Animation Tool",
-    },
+    { title: "Vercel", icon: VercelLight, darkIcon: VercelDark },
+    { title: "Ubuntu", icon: Ubuntu },
+    { title: "Cloudflare", icon: Cloudflare },
   ],
+  software: [
+    { title: "Postman", icon: Postman },
+    { title: "Figma", icon: Figma },
+    { title: "Framer", icon: FramerLight, darkIcon: FramerDark },
+  ],
+  // devops: [
+  //   { title: "Github Actions(CI/CD)", icon: "githubactions" },
+  //   { title: "", icon: "jwt" },
+  // ],
 };
-
-// TODO - Load from CMS
-export const POSTS = [
-  {
-    title: "How to use Tailwind CSS with Next.js",
-    description: "A guide to setting up Tailwind CSS with Next.js",
-    date: "2021-10-01",
-    cover:
-      "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    tags: ["Next.js", "Tailwind CSS"],
-  },
-  {
-    title: "How to use Vite with React",
-    description: "A guide to setting up Vite with React",
-    date: "2021-09-01",
-    cover:
-      "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    tags: ["Vite", "React"],
-  },
-  {
-    title: "How to use Vite with Vue",
-    description: "A guide to setting up Vite with Vue",
-    date: "2021-08-01",
-    cover:
-      "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    tags: ["Vite", "Vue"],
-  },
-  {
-    title: "How to use Vite with Svelte",
-    description: "A guide to setting up Vite with Svelte",
-    date: "2021-07-01",
-    cover:
-      "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    tags: ["Vite", "Svelte"],
-  },
-  {
-    title: "How to use Vite with Preact",
-    description: "A guide to setting up Vite with Preact",
-    date: "2021-06-01",
-    cover:
-      "https://images.unsplash.com/photo-1579547621700-03c2c337370a?q=80&w=3500&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    tags: ["Vite", "Preact"],
-  },
-];

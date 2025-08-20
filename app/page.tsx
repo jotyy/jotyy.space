@@ -7,7 +7,6 @@ import { StackList } from "@/components/stack-list";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
-import { revalidateDuration } from "@/lib/constants";
 import {
   PageBlogPostFieldsFragment,
   PageBlogPostOrder,
@@ -54,14 +53,15 @@ export default async function Home() {
         className="rounded-full"
       />
       <div>
-        <h5 className="font-bold text-xl">Hey, it&apos;s Joshua</h5>
-        <h1 className="font-bold text-4xl leading-normal mt-2">
-          Building AI products & experiences.
+        <h5 className="font-semibold text-lg">Hey, it&apos;s Joshua</h5>
+        <h1 className="font-semibold text-4xl leading-normal mt-2 text-foreground">
+          Full-Stack Engineer & AI Product Designer.
         </h1>
         <p className="text-muted-foreground">
-          I&apos;m a software engineer with 8 years of experience specializing
-          in B2B, B2C solutions, creating user-centered experiences that drive
-          innovation and efficiency.
+          I&apos;m a versatile engineer with 8 years of experience building AI-powered 
+          products from concept to production. I combine full-stack development, 
+          UX design expertise, and DevOps proficiency to create scalable solutions 
+          that drive innovation in the AI industry.
         </p>
       </div>
 
@@ -94,17 +94,17 @@ export default async function Home() {
         <PostList data={posts} />
       </SectionWrapper>
 
-      <Card className="border rounded-md py-4 bg-secondary mt-12">
+      <Card className="border rounded-md py-4 mt-12">
         <CardContent>
-          <h3 className="font-bold text-xl">Get Notifications</h3>
-          <p className="text-secondary-foreground">
+          <h3 className="font-semibold text-xl text-foreground">Get Notifications</h3>
+          <p className="text-muted-foreground">
             Subscribe to my newsletter and get notified when I publish new
             content.
           </p>
         </CardContent>
         <CardFooter className="flex flex-row gap-4">
-          <Input placeholder="Your Email" className="flex-1" />
-          <Button>Subscribe</Button>
+          <Input placeholder="Your Email" className="flex-1 max-w-xs" />
+          <Button className="h-9">Subscribe</Button>
         </CardFooter>
       </Card>
     </PageContainer>

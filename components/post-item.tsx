@@ -31,7 +31,7 @@ export function PostItem({
         <p className="text-sm mt-2 text-muted-foreground">
           {format(publishedDate, "MMMM dd, yyyy")}
         </p>
-        <h3 className="text-xl font-bold">{title}</h3>
+        <h3 className="text-xl font-semibold text-foreground">{title}</h3>
         <p className="text-muted-foreground">{shortDescription}</p>
       </div>
     </div>

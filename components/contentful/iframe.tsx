@@ -26,7 +26,7 @@ export default function Iframe({
           )}
           {...rest}
         />
-        <figcaption className="mt-2 break-words text-center text-sm text-neutral-500">
+        <figcaption className="mt-2 break-words text-center text-sm text-zinc-500">
           {title}
         </figcaption>
       </figure>
