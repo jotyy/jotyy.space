@@ -48,7 +48,7 @@ export default async function RootLayout({
           <div className="flex flex-1">
             <ScrollArea className="flex flex-col" hasScrollTitle>
               <NavHeader scrollTitle="Jotyy" />
-              <div className="pb-12">{children}</div>
+              <div className="pb-12 max-w-6xl mx-auto">{children}</div>
             </ScrollArea>
           </div>
           <Toaster />

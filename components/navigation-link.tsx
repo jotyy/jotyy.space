@@ -27,7 +27,7 @@ export const NavigationLink = memo(
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center justify-between gap-2 rounded-lg p-2 hover:bg-zinc-200 dark:hover:bg-zinc-800"
+          className="flex items-center justify-between gap-2 rounded-lg p-2 hover:bg-primary"
         >
           <span className="inline-flex items-center gap-2 font-medium">
             {iconCmp} {label}
@@ -49,24 +49,24 @@ export const NavigationLink = memo(
         key={href}
         href={href}
         className={cn(
-          "group flex items-center justify-between rounded-lg p-4",
+          "group flex items-center justify-between rounded-lg p-4 transition-colors duration-200 ease-in-out",
           isActive
-            ? "bg-black text-white"
-            : "hover:bg-zinc-200 dark:hover:bg-zinc-800"
+            ? "bg-primary text-primary-foreground"
+            : "hover:bg-primary/90 hover:text-primary-foreground"
         )}
       >
-        <span className="flex items-center gap-2">
+        <span className="flex items-center gap-3">
           {iconCmp}
-          <span className={cn("font-medium", isActive && "text-white")}>
+          <span className={cn("font-medium", isActive && "text-primary-foreground")}>
             {label}
           </span>
         </span>
         {shortcutNumber && (
           <span
             className={cn(
-              "hidden h-5 w-5 place-content-center rounded border border-zinc-200 bg-zinc-100 text-xs font-medium text-zinc-500 transition-colors duration-200 group-hover:border-zinc-300 dark:border-zinc-800 dark:bg-zinc-900 dark:text-zinc-400 dark:group-hover:border-zinc-700 lg:grid",
+              "hidden h-5 w-5 place-content-center rounded border border-border bg-secondary text-xs font-medium text-muted-foreground transition-colors duration-200 group-hover:border-border group-hover:bg-secondary/80 lg:grid",
               isActive &&
-                "border-zinc-600 bg-zinc-700 text-zinc-200 group-hover:border-zinc-600 dark:border-zinc-400 dark:bg-zinc-800 dark:text-zinc-300 dark:group-hover:border-zinc-500"
+                "border-primary bg-secondary/20 text-primary-foreground group-hover:border-primary group-hover:bg-primary/80"
             )}
             title={`Shortcut key: ${shortcutNumber}`}
           >

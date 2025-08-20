@@ -32,7 +32,7 @@ export function ProjectItem({
         </div>
       </Link>
       <p className="text-xs mt-2 text-muted-foreground">{description}</p>
-      <h3 className="text-lg font-semibold text-zinc-900 dark:text-zinc-100">
+      <h3 className="text-lg font-semibold text-foreground">
         {title}
       </h3>
       <div className="flex flex-wrap gap-1 mt-2">

@@ -46,9 +46,9 @@ export function StackList() {
     const Icon = theme === "dark" && DarkIcon ? DarkIcon : LightIcon;
 
     return (
-      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/50 dark:bg-zinc-900 border border-border dark:border-zinc-800">
+      <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-secondary/50 border border-border">
         <Icon className="size-3" />
-        <span className="text-xs text-foreground dark:text-zinc-100">
+        <span className="text-xs text-muted-foreground">
           {children}
         </span>
       </span>
