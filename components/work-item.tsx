@@ -20,10 +20,10 @@ export function WorkItem({
   return (
     <div className="flex flex-col items-start">
       <Link href={href || ''} target="_blank">
-        <div className="relative aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-lg bg-gradient-to-tl from-[#757F9A] to-[#D7DDE8] dark:from-[#1A1A1A] dark:to-[#2A2A2A]">
+        <div className="relative w-full cursor-pointer grayscale-0 transition-colors duration-400 ease-in-out hover:grayscale-0 dark:grayscale">
           <Image
             alt={title}
-            className="aspect-[4/3] h-full w-full rounded-md object-cover transition-all hover:scale-110"
+            className="h-full w-full rounded-none border-none object-contain"
             height={300}
             loading="lazy"
             src={cover}
@@ -31,8 +31,9 @@ export function WorkItem({
           />
         </div>
       </Link>
-      <p className="mt-2 text-muted-foreground text-xs">{description}</p>
-      <h3 className="font-semibold text-foreground text-lg">{title}</h3>
+      <h3 className="mt-2 font-semibold text-foreground text-lg">{title}</h3>
+      <p className="text-muted-foreground text-xs">{description}</p>
+
       <div className="mt-2 flex flex-wrap gap-1">
         {tags.map((tag) => (
           <Badge key={tag} variant="outline">

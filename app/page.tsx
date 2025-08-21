@@ -72,7 +72,7 @@ export default async function Home() {
         }}
         title="My Works"
       >
-        <WorkList />
+        <WorkList limit={4} />
       </SectionWrapper>
 
       <SectionWrapper

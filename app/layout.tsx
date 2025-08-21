@@ -24,9 +24,7 @@ export default async function RootLayout({
 
   return (
     <html className={`${inter.variable}`} lang="en" suppressHydrationWarning>
-      <body
-        className={cn('flex min-h-screen bg-background font-sans antialiased')}
-      >
+      <body className={cn('flex min-h-screen font-sans antialiased')}>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
