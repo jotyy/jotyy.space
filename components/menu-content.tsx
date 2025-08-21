@@ -49,7 +49,7 @@ export const MenuContent = () => {
             key={profile.title}
             onClick={() => window.open(profile.url)}
             size="icon"
-            variant="secondary"
+            variant="outline"
           >
             {profile.icon}
           </Button>

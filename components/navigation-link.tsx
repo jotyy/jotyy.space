@@ -56,28 +56,24 @@ export const NavigationLink = memo(
     return (
       <Link
         className={cn(
-          'group flex items-center justify-between rounded-lg p-4 transition-colors duration-200 ease-in-out',
+          'group flex items-center justify-between rounded-lg p-4 transition-colors duration-300 ease-in-out',
           isActive
-            ? 'bg-primary text-primary-foreground'
-            : 'hover:bg-primary/90 hover:text-primary-foreground'
+            ? 'bg-primary text-primary-foreground hover:bg-primary'
+            : 'hover:bg-primary hover:text-primary-foreground'
         )}
         href={href}
         key={href}
       >
         <span className="flex items-center gap-3">
           {iconCmp}
-          <span
-            className={cn('font-medium', isActive && 'text-primary-foreground')}
-          >
-            {label}
-          </span>
+          <span className="font-medium">{label}</span>
         </span>
         {shortcutNumber && (
           <span
             className={cn(
-              'hidden h-5 w-5 place-content-center rounded border border-border bg-secondary font-medium text-muted-foreground text-xs transition-colors duration-200 group-hover:border-border group-hover:bg-secondary/80 lg:grid',
+              'hidden h-5 w-5 place-content-center rounded border border-border bg-secondary font-medium text-muted-foreground text-xs transition-colors duration-200 lg:grid',
               isActive &&
-                'border-primary bg-secondary/20 text-primary-foreground group-hover:border-primary group-hover:bg-primary/80'
+                'border-primary bg-secondary/20 text-primary-foreground dark:text-primary-foreground'
             )}
             title={`Shortcut key: ${shortcutNumber}`}
           >

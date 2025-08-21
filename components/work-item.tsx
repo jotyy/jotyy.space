@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Badge } from '@/components/ui/badge';
 
-export type ProjectItemProps = {
+export type WorkItemProps = {
   title: string;
   description: string;
   href?: string;
@@ -10,13 +10,13 @@ export type ProjectItemProps = {
   tags: string[];
 };
 
-export function ProjectItem({
+export function WorkItem({
   title,
   description,
   href,
   cover,
   tags,
-}: ProjectItemProps) {
+}: WorkItemProps) {
   return (
     <div className="flex flex-col items-start">
       <Link href={href || ''} target="_blank">

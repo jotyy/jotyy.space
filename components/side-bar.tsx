@@ -10,8 +10,8 @@ import { cn } from '@/lib/utils';
 const keyCodePathnameMapping: Record<string, string> = {
   Digit1: '/',
   Digit2: '/writing',
-  Digit3: '/projects',
-  Digit4: '/stack',
+  Digit3: '/works',
+  Digit4: '/skills',
   // Digit5: "/bookmarks",
   Digit5: '/contact',
 };

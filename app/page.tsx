@@ -2,12 +2,12 @@ import Image from 'next/image';
 import { GetInTouchButton } from '@/components/get-in-touch-button';
 import { PageContainer } from '@/components/page-container';
 import { PostList } from '@/components/post-list';
-import { ProjectList } from '@/components/project-list';
 import { SectionWrapper } from '@/components/section-wrapper';
 import { StackList } from '@/components/stack-list';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardFooter } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
+import { WorkList } from '@/components/work-list';
 import {
   type PageBlogPostFieldsFragment,
   PageBlogPostOrder,
@@ -68,19 +68,19 @@ export default async function Home() {
       <SectionWrapper
         link={{
           label: 'View all',
-          href: '/projects',
+          href: '/works',
         }}
         title="My Works"
       >
-        <ProjectList />
+        <WorkList />
       </SectionWrapper>
 
       <SectionWrapper
         link={{
           label: 'View all',
-          href: '/stack',
+          href: '/skils',
         }}
-        title="My Stack"
+        title="My Skills"
       >
         <StackList />
       </SectionWrapper>

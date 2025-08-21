@@ -49,7 +49,7 @@ export const PROFILES = {
   twitter: {
     title: 'X (Twitter)',
     username: 'jotyy',
-    url: 'https://twitter.com/intent/user?screen_name=jotyy_ai',
+    url: 'https://x.com/jotyy_ai',
     icon: <SocialIcons.x />,
   },
   github: {
@@ -81,31 +81,31 @@ export const LINKS = [
     icon: <Icons.blog />,
   },
   {
-    href: '/projects',
-    label: 'Projects',
-    icon: <Icons.projects />,
+    href: '/works',
+    label: 'Works',
+    icon: <Icons.works />,
   },
   {
-    href: '/stack',
-    label: 'Stack',
-    icon: <Icons.stack />,
+    href: '/skills',
+    label: 'Skills',
+    icon: <Icons.skills />,
   },
   // {
   //   href: "/bookmarks",
   //   label: "Bookmarks",
   //   icon: <Icons.bookmark />,
   // },
-  {
-    href: '/contact',
-    label: 'Contact',
-    icon: <Icons.contact />,
-  },
+  // {
+  //   href: '/contact',
+  //   label: 'Contact',
+  //   icon: <Icons.contact />,
+  // },
 ];
 
 export const SCROLL_AREA_ID = 'scroll-area';
 export const MOBILE_SCROLL_THRESHOLD = 20;
 
-export const PROJECTS = [
+export const WORKS = [
   {
     title: 'Denser.ai',
     description: 'AI Portal Site',
