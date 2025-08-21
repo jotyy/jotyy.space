@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { NavigationLink } from '@/components/navigation-link';
 import { ThemeToggle } from '@/components/theme-toggle';
 import { Button } from '@/components/ui/button';
@@ -20,7 +21,7 @@ export const MenuContent = () => {
           />
           <div className="flex flex-1 flex-col">
             <span className="font-semibold text-base tracking-tight">
-              Joshua Lee
+              Joshua Li
             </span>
             <span className="text-muted-foreground text-sm">
               Software Engineer
@@ -45,13 +46,16 @@ export const MenuContent = () => {
         {Object.values(PROFILES).map((profile) => (
           <Button
             aria-label={profile.title}
-            className="rounded-full"
+            asChild
+            className="rounded-full transition-colors duration-400 ease-[cubic-bezier(0.65,0,0.35,1)] hover:bg-primary hover:text-primary-foreground"
             key={profile.title}
-            onClick={() => window.open(profile.url)}
             size="icon"
+            type="button"
             variant="outline"
           >
-            {profile.icon}
+            <Link href={profile.url} key={profile.title} target="_blank">
+              {profile.icon}
+            </Link>
           </Button>
         ))}
       </div>

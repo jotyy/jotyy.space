@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { GetInTouchButton } from '@/components/get-in-touch-button';
+import { GithubCalendar } from '@/components/github-calendar';
 import { PageContainer } from '@/components/page-container';
 import { PostList } from '@/components/post-list';
 import { SectionWrapper } from '@/components/section-wrapper';
@@ -53,7 +54,7 @@ export default async function Home() {
       <div>
         <h5 className="font-semibold text-lg">Hey, it&apos;s Joshua</h5>
         <h1 className="mt-2 font-semibold text-4xl text-foreground leading-normal">
-          Full-Stack Engineer & AI Product Designer.
+          Design Engineer.
         </h1>
         <p className="text-muted-foreground">
           I&apos;m a versatile engineer with 8 years of experience building
@@ -62,6 +63,8 @@ export default async function Home() {
           scalable solutions that drive innovation in the AI industry.
         </p>
       </div>
+
+      <GithubCalendar />
 
       <GetInTouchButton />
 
@@ -92,7 +95,7 @@ export default async function Home() {
         <PostList data={posts} />
       </SectionWrapper>
 
-      <Card className="mt-12 rounded-md border py-4">
+      <Card className="mt-12 rounded-md border bg-background py-4">
         <CardContent>
           <h3 className="font-semibold text-foreground text-xl">
             Get Notifications

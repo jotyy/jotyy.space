@@ -56,7 +56,7 @@ export const NavigationLink = memo(
     return (
       <Link
         className={cn(
-          'group flex items-center justify-between rounded-lg p-4 transition-colors duration-300 ease-in-out',
+          'group flex items-center justify-between rounded-lg p-4 transition-colors duration-400 ease-[cubic-bezier(0.65,0,0.35,1)]',
           isActive
             ? 'bg-primary text-primary-foreground hover:bg-primary'
             : 'hover:bg-primary hover:text-primary-foreground'

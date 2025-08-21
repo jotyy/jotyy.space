@@ -1,4 +1,4 @@
-export const sharedTitle = 'Joshua Lee';
+export const sharedTitle = 'Joshua Li';
 export const sharedDescription = 'Software Engineer';
 export const sharedImage = {
   width: 1200,

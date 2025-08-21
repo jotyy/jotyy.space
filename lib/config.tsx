@@ -108,9 +108,9 @@ export const PROFILES = {
     url: 'https://www.linkedin.com/in/jotyy3',
     icon: <SocialIcons.linkedin />,
   },
-  readcv: {
-    title: 'Read.cv',
-    url: 'https://read.cv/jotyy',
+  resume: {
+    title: 'Resume',
+    url: '/resume.pdf',
     icon: <Icons.at />,
   },
 };
