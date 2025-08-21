@@ -1,20 +1,20 @@
-import NextLink from "next/link";
+import NextLink from 'next/link';
 
-import { isExternalLink } from "@/utils";
+import { isExternalLink } from '@/utils';
 
-export const Link = ({ href = "#", ...rest }) => {
+export const Link = ({ href = '#', ...rest }) => {
   const isExternal = isExternalLink(href);
   if (isExternal) {
     return (
       <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
         className="link break-words after:content-['_↗']"
+        href={href}
+        rel="noopener noreferrer"
+        target="_blank"
         {...rest}
       />
     );
   }
 
-  return <NextLink href={href} className="link" {...rest} />;
+  return <NextLink className="link" href={href} {...rest} />;
 };

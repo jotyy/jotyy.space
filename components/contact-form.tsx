@@ -1,7 +1,11 @@
-"use client";
+'use client';
 
-import { Icons } from "@/components/icons";
-import { Button } from "@/components/ui/button";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
+import { Icons } from '@/components/icons';
+import { Button } from '@/components/ui/button';
 import {
   Form,
   FormControl,
@@ -10,45 +14,41 @@ import {
   FormItem,
   FormLabel,
   FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { ContactFormValues, contactFormSchema } from "@/lib/schema";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useState } from "react";
-import { useForm } from "react-hook-form";
-import { toast } from "sonner";
+} from '@/components/ui/form';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { type ContactFormValues, contactFormSchema } from '@/lib/schema';
 
 export function ContactForm() {
   const [isSending, setIsSending] = useState(false);
   const form = useForm<ContactFormValues>({
     defaultValues: {
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
     },
     resolver: zodResolver(contactFormSchema),
   });
 
   const onSubmit = (values: ContactFormValues) => {
     setIsSending(true);
-    fetch("/api/send", {
-      method: "POST",
+    fetch('/api/send', {
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(values),
     })
-      .then(() => toast.success("Message sent! I will reply to you soon."))
-      .catch(() => toast.error("Failed to send message."))
+      .then(() => toast.success('Message sent! I will reply to you soon.'))
+      .catch(() => toast.error('Failed to send message.'))
       .finally(() => setIsSending(false));
   };
 
   return (
     <Form {...form}>
       <form
-        onSubmit={form.handleSubmit(onSubmit)}
         className="grid grid-cols-2 gap-6"
+        onSubmit={form.handleSubmit(onSubmit)}
       >
         <FormField
           control={form.control}
@@ -58,8 +58,8 @@ export function ContactForm() {
               <FormLabel>Name</FormLabel>
               <FormControl>
                 <Input
+                  className="border-0 bg-secondary"
                   placeholder="Your name"
-                  className="bg-secondary border-0"
                   {...field}
                 />
               </FormControl>
@@ -78,8 +78,8 @@ export function ContactForm() {
               <FormLabel>Email</FormLabel>
               <FormControl>
                 <Input
-                  placeholder="Your email"
                   className="border-0 bg-secondary"
+                  placeholder="Your email"
                   {...field}
                 />
               </FormControl>
@@ -98,8 +98,8 @@ export function ContactForm() {
               <FormLabel>Message</FormLabel>
               <FormControl>
                 <Textarea
-                  placeholder="Your message"
                   className="border-0 bg-secondary"
+                  placeholder="Your message"
                   {...field}
                 />
               </FormControl>
@@ -107,8 +107,8 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        <Button type="submit" disabled={isSending} className="w-fit">
-          {isSending && <Icons.spinner className="animate-spin mr-2" />}
+        <Button className="w-fit" disabled={isSending} type="submit">
+          {isSending && <Icons.spinner className="mr-2 animate-spin" />}
           Send Message
         </Button>
       </form>

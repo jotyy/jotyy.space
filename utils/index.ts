@@ -5,7 +5,7 @@
  * @returns The dasherized version of the input text.
  */
 export const dasherize = (text: React.ReactNode) =>
-  String(text).replace(/ +/g, "-").toLowerCase();
+  String(text).replace(/ +/g, '-').toLowerCase();
 
 /**
  * Checks whether a given link is an external link by evaluating its href attribute.
@@ -15,6 +15,8 @@ export const dasherize = (text: React.ReactNode) =>
  * @returns A boolean value indicating whether the link is an external link.
  */
 export const isExternalLink = (href: string) => {
-  if (!href) return false;
-  return !href.startsWith("/") && !href.startsWith("#");
+  if (!href) {
+    return false;
+  }
+  return !(href.startsWith('/') || href.startsWith('#'));
 };

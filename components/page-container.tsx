@@ -1,15 +1,15 @@
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils';
 
-export interface PageContainerProps {
+export type PageContainerProps = {
   children: React.ReactNode;
   className?: string;
-}
+};
 
 export function PageContainer({ children, className }: PageContainerProps) {
   return (
     <div
       className={cn(
-        "container px-8 max-w-4xl flex min-h-screen flex-col py-24 gap-4",
+        'container flex min-h-screen max-w-4xl flex-col gap-4 px-8 py-24',
         className
       )}
     >
@@ -18,12 +18,12 @@ export function PageContainer({ children, className }: PageContainerProps) {
   );
 }
 
-export interface PageHeaderProps {
+export type PageHeaderProps = {
   heading: string;
   description?: string;
   className?: string;
   children?: React.ReactNode;
-}
+};
 
 export function PageHeader({
   heading,
@@ -33,10 +33,10 @@ export function PageHeader({
 }: PageHeaderProps) {
   return (
     <header
-      className={cn("flex flex-row justify-between items-center", className)}
+      className={cn('flex flex-row items-center justify-between', className)}
     >
       <div className="flex flex-col">
-        <h1 className="text-3xl font-semibold text-foreground">{heading}</h1>
+        <h1 className="font-semibold text-3xl text-foreground">{heading}</h1>
         <p className="text-muted-foreground">{description}</p>
       </div>
 

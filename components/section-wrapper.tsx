@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { Icons } from "@/components/icons";
-import { cn } from "@/lib/utils";
-import Link from "next/link";
+import Link from 'next/link';
+import { Icons } from '@/components/icons';
+import { cn } from '@/lib/utils';
 
-export interface SectionWrapperProps {
+export type SectionWrapperProps = {
   children: React.ReactNode;
   className?: string;
   title: string;
@@ -12,7 +12,7 @@ export interface SectionWrapperProps {
     href: string;
     label: string;
   };
-}
+};
 
 export function SectionWrapper({
   children,
@@ -21,12 +21,10 @@ export function SectionWrapper({
   link,
 }: SectionWrapperProps) {
   return (
-    <div className={cn("flex flex-col gap-6", className)}>
-      <div className="flex flex-row justify-between mt-12">
-        <h2 className="font-semibold text-2xl text-foreground">
-          {title}
-        </h2>
-        <Link href={link.href} className="flex items-center underline">
+    <div className={cn('flex flex-col gap-6', className)}>
+      <div className="mt-12 flex flex-row justify-between">
+        <h2 className="font-semibold text-2xl text-foreground">{title}</h2>
+        <Link className="flex items-center underline" href={link.href}>
           <Icons.arrowRight />
         </Link>
       </div>

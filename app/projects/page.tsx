@@ -1,10 +1,10 @@
-import { PageContainer, PageHeader } from "@/components/page-container";
-import { ProjectList } from "@/components/project-list";
+import { PageContainer, PageHeader } from '@/components/page-container';
+import { ProjectList } from '@/components/project-list';
 
 export default function Projects() {
   return (
     <PageContainer>
-      <PageHeader heading="My Works" description="Here are some of my works" />
+      <PageHeader description="Here are some of my works" heading="My Works" />
       <ProjectList />
     </PageContainer>
   );

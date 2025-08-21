@@ -1,20 +1,18 @@
-import { draftMode } from "next/headers";
-
-import { sharedDescription, sharedTitle } from "@/app/shared-meta";
-import { NavHeader } from "@/components/nav-header";
-import { SideBar } from "@/components/side-bar";
-import { ScrollArea } from "@/components/ui/scroll-area";
-import { Toaster } from "@/components/ui/sonner";
-import { cn } from "@/utils/cn";
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-
-import { ThemeProvider } from "@/components/theme-provider";
-import "./globals.css";
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import { draftMode } from 'next/headers';
+import { sharedDescription, sharedTitle } from '@/app/shared-meta';
+import { NavHeader } from '@/components/nav-header';
+import { SideBar } from '@/components/side-bar';
+import { ThemeProvider } from '@/components/theme-provider';
+import { ScrollArea } from '@/components/ui/scroll-area';
+import { Toaster } from '@/components/ui/sonner';
+import { cn } from '@/utils/cn';
+import './globals.css';
 
 const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-sans",
+  subsets: ['latin'],
+  variable: '--font-sans',
 });
 
 export default async function RootLayout({
@@ -25,18 +23,18 @@ export default async function RootLayout({
   const { isEnabled } = await draftMode();
 
   return (
-    <html lang="en" className={`${inter.variable}`} suppressHydrationWarning>
+    <html className={`${inter.variable}`} lang="en" suppressHydrationWarning>
       <body
-        className={cn("min-h-screen flex bg-background font-sans antialiased")}
+        className={cn('flex min-h-screen bg-background font-sans antialiased')}
       >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem={false}
           disableTransitionOnChange
+          enableSystem={false}
         >
           {isEnabled && (
-            <div className="absolute bottom-0 left-0 right-0 z-50 flex h-12 w-full items-center justify-center bg-green-500 text-center text-sm font-medium text-white">
+            <div className="absolute right-0 bottom-0 left-0 z-50 flex h-12 w-full items-center justify-center bg-green-500 text-center font-medium text-sm text-white">
               <div className="flex items-center gap-2">
                 <span>Draft mode is enabled</span>
               </div>
@@ -48,7 +46,7 @@ export default async function RootLayout({
           <div className="flex flex-1">
             <ScrollArea className="flex flex-col" hasScrollTitle>
               <NavHeader scrollTitle="Jotyy" />
-              <div className="pb-12 max-w-6xl mx-auto">{children}</div>
+              <div className="mx-auto max-w-6xl pb-12">{children}</div>
             </ScrollArea>
           </div>
           <Toaster />
@@ -59,7 +57,7 @@ export default async function RootLayout({
 }
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://jotyy.vercel.app"),
+  metadataBase: new URL('https://jotyy.vercel.app'),
   robots: {
     index: true,
     follow: true,
@@ -75,25 +73,25 @@ export const metadata: Metadata = {
       default: sharedTitle,
     },
     description: sharedDescription,
-    type: "website",
-    url: "/",
+    type: 'website',
+    url: '/',
     siteName: sharedTitle,
-    locale: "en_IE",
+    locale: 'en_IE',
   },
   alternates: {
-    canonical: "/",
+    canonical: '/',
   },
   twitter: {
-    card: "summary_large_image",
-    site: "jotyy_ai_mvp",
-    creator: "jotyy_ai_mvp",
+    card: 'summary_large_image',
+    site: 'jotyy_ai_mvp',
+    creator: 'jotyy_ai_mvp',
   },
   other: {
-    pinterest: "nopin",
+    pinterest: 'nopin',
   },
 };
 
 export const viewport = {
-  width: "device-width",
+  width: 'device-width',
   initialScale: 1,
 };

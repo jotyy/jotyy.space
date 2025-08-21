@@ -4,16 +4,16 @@ const nextConfig = {
     remotePatterns: [
       // https://avatars.githubusercontent.com/u/30037764?v=4
       {
-        protocol: "https",
-        hostname: "avatars.githubusercontent.com",
-        port: "",
-        pathname: "/u/*",
+        protocol: 'https',
+        hostname: 'avatars.githubusercontent.com',
+        port: '',
+        pathname: '/u/*',
       },
       {
-        protocol: "https",
-        hostname: "images.ctfassets.net",
-        port: "",
-        pathname: "/**",
+        protocol: 'https',
+        hostname: 'images.ctfassets.net',
+        port: '',
+        pathname: '/**',
       },
     ],
   },

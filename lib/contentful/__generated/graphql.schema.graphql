@@ -1,4 +1,6 @@
-"""Represents a binary file in a space. An asset can be any file type."""
+"""
+Represents a binary file in a space. An asset can be any file type.
+"""
 type Asset {
   contentType(locale: String): String
   contentfulMetadata: ContentfulMetadata!
@@ -90,11 +92,36 @@ input AssetFilter {
 }
 
 type AssetLinkingCollections {
-  componentAuthorCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): ComponentAuthorCollection
-  componentRichImageCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): ComponentRichImageCollection
-  componentSeoCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): ComponentSeoCollection
-  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
-  pageBlogPostCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): PageBlogPostCollection
+  componentAuthorCollection(
+    limit: Int = 100
+    locale: String
+    preview: Boolean
+    skip: Int = 0
+  ): ComponentAuthorCollection
+  componentRichImageCollection(
+    limit: Int = 100
+    locale: String
+    preview: Boolean
+    skip: Int = 0
+  ): ComponentRichImageCollection
+  componentSeoCollection(
+    limit: Int = 100
+    locale: String
+    preview: Boolean
+    skip: Int = 0
+  ): ComponentSeoCollection
+  entryCollection(
+    limit: Int = 100
+    locale: String
+    preview: Boolean
+    skip: Int = 0
+  ): EntryCollection
+  pageBlogPostCollection(
+    limit: Int = 100
+    locale: String
+    preview: Boolean
+    skip: Int = 0
+  ): PageBlogPostCollection
 }
 
 enum AssetOrder {
@@ -162,8 +189,19 @@ input ComponentAuthorFilter {
 }
 
 type ComponentAuthorLinkingCollections {
-  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
-  pageBlogPostCollection(limit: Int = 100, locale: String, order: [ComponentAuthorLinkingCollectionsPageBlogPostCollectionOrder], preview: Boolean, skip: Int = 0): PageBlogPostCollection
+  entryCollection(
+    limit: Int = 100
+    locale: String
+    preview: Boolean
+    skip: Int = 0
+  ): EntryCollection
+  pageBlogPostCollection(
+    limit: Int = 100
+    locale: String
+    order: [ComponentAuthorLinkingCollectionsPageBlogPostCollectionOrder]
+    preview: Boolean
+    skip: Int = 0
+  ): PageBlogPostCollection
 }
 
 enum ComponentAuthorLinkingCollectionsPageBlogPostCollectionOrder {
@@ -246,7 +284,12 @@ input ComponentRichImageFilter {
 }
 
 type ComponentRichImageLinkingCollections {
-  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  entryCollection(
+    limit: Int = 100
+    locale: String
+    preview: Boolean
+    skip: Int = 0
+  ): EntryCollection
 }
 
 enum ComponentRichImageOrder {
@@ -278,7 +321,12 @@ type ComponentSeo implements Entry {
   noindex(locale: String): Boolean
   pageDescription(locale: String): String
   pageTitle(locale: String): String
-  shareImagesCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): AssetCollection
+  shareImagesCollection(
+    limit: Int = 100
+    locale: String
+    preview: Boolean
+    skip: Int = 0
+  ): AssetCollection
   sys: Sys!
 }
 
@@ -332,9 +380,26 @@ input ComponentSeoFilter {
 }
 
 type ComponentSeoLinkingCollections {
-  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
-  pageBlogPostCollection(limit: Int = 100, locale: String, order: [ComponentSeoLinkingCollectionsPageBlogPostCollectionOrder], preview: Boolean, skip: Int = 0): PageBlogPostCollection
-  pageLandingCollection(limit: Int = 100, locale: String, order: [ComponentSeoLinkingCollectionsPageLandingCollectionOrder], preview: Boolean, skip: Int = 0): PageLandingCollection
+  entryCollection(
+    limit: Int = 100
+    locale: String
+    preview: Boolean
+    skip: Int = 0
+  ): EntryCollection
+  pageBlogPostCollection(
+    limit: Int = 100
+    locale: String
+    order: [ComponentSeoLinkingCollectionsPageBlogPostCollectionOrder]
+    preview: Boolean
+    skip: Int = 0
+  ): PageBlogPostCollection
+  pageLandingCollection(
+    limit: Int = 100
+    locale: String
+    order: [ComponentSeoLinkingCollectionsPageLandingCollectionOrder]
+    preview: Boolean
+    skip: Int = 0
+  ): PageLandingCollection
 }
 
 enum ComponentSeoLinkingCollectionsPageBlogPostCollectionOrder {
@@ -457,13 +522,17 @@ enum EntryOrder {
   sys_publishedVersion_DESC
 }
 
-"""The 'HexColor' type represents color in `rgb:ffffff` string format."""
+"""
+The 'HexColor' type represents color in `rgb:ffffff` string format.
+"""
 scalar HexColor
 
 enum ImageFormat {
   AVIF
 
-  """JPG image format."""
+  """
+  JPG image format.
+  """
   JPG
 
   """
@@ -474,7 +543,9 @@ enum ImageFormat {
   """
   JPG_PROGRESSIVE
 
-  """PNG image format"""
+  """
+  PNG image format
+  """
   PNG
 
   """
@@ -483,42 +554,66 @@ enum ImageFormat {
   """
   PNG8
 
-  """WebP image format."""
+  """
+  WebP image format.
+  """
   WEBP
 }
 
 enum ImageResizeFocus {
-  """Focus the resizing on the bottom."""
+  """
+  Focus the resizing on the bottom.
+  """
   BOTTOM
 
-  """Focus the resizing on the bottom left."""
+  """
+  Focus the resizing on the bottom left.
+  """
   BOTTOM_LEFT
 
-  """Focus the resizing on the bottom right."""
+  """
+  Focus the resizing on the bottom right.
+  """
   BOTTOM_RIGHT
 
-  """Focus the resizing on the center."""
+  """
+  Focus the resizing on the center.
+  """
   CENTER
 
-  """Focus the resizing on the largest face."""
+  """
+  Focus the resizing on the largest face.
+  """
   FACE
 
-  """Focus the resizing on the area containing all the faces."""
+  """
+  Focus the resizing on the area containing all the faces.
+  """
   FACES
 
-  """Focus the resizing on the left."""
+  """
+  Focus the resizing on the left.
+  """
   LEFT
 
-  """Focus the resizing on the right."""
+  """
+  Focus the resizing on the right.
+  """
   RIGHT
 
-  """Focus the resizing on the top."""
+  """
+  Focus the resizing on the top.
+  """
   TOP
 
-  """Focus the resizing on the top left."""
+  """
+  Focus the resizing on the top left.
+  """
   TOP_LEFT
 
-  """Focus the resizing on the top right."""
+  """
+  Focus the resizing on the top right.
+  """
   TOP_RIGHT
 }
 
@@ -533,7 +628,9 @@ enum ImageResizeStrategy {
   """
   FILL
 
-  """Resizes the image to fit into the specified dimensions."""
+  """
+  Resizes the image to fit into the specified dimensions.
+  """
   FIT
 
   """
@@ -547,7 +644,9 @@ enum ImageResizeStrategy {
   """
   SCALE
 
-  """Creates a thumbnail from the image."""
+  """
+  Creates a thumbnail from the image.
+  """
   THUMB
 }
 
@@ -566,10 +665,14 @@ input ImageTransformOptions {
   """
   cornerRadius: Int
 
-  """Desired image format. Defaults to the original image format."""
+  """
+  Desired image format. Defaults to the original image format.
+  """
   format: ImageFormat
 
-  """Desired height in pixels. Defaults to the original image height."""
+  """
+  Desired height in pixels. Defaults to the original image height.
+  """
   height: Dimension
 
   """
@@ -578,13 +681,19 @@ input ImageTransformOptions {
   """
   quality: Quality
 
-  """Desired resize focus area. Defaults to `CENTER`."""
+  """
+  Desired resize focus area. Defaults to `CENTER`.
+  """
   resizeFocus: ImageResizeFocus
 
-  """Desired resize strategy. Defaults to `FIT`."""
+  """
+  Desired resize strategy. Defaults to `FIT`.
+  """
   resizeStrategy: ImageResizeStrategy
 
-  """Desired width in pixels. Defaults to the original image width."""
+  """
+  Desired width in pixels. Defaults to the original image width.
+  """
   width: Dimension
 }
 
@@ -597,15 +706,30 @@ scalar JSON
 To create individual blog posts [See type definition](https://app.contentful.com/spaces/8hk7mpfr9z4t/content_types/pageBlogPost)
 """
 type PageBlogPost implements Entry {
-  author(locale: String, preview: Boolean, where: ComponentAuthorFilter): ComponentAuthor
+  author(
+    locale: String
+    preview: Boolean
+    where: ComponentAuthorFilter
+  ): ComponentAuthor
   content(locale: String): PageBlogPostContent
   contentfulMetadata: ContentfulMetadata!
   featuredImage(locale: String, preview: Boolean): Asset
   internalName(locale: String): String
   linkedFrom(allowedLocales: [String]): PageBlogPostLinkingCollections
   publishedDate(locale: String): DateTime
-  relatedBlogPostsCollection(limit: Int = 100, locale: String, order: [PageBlogPostRelatedBlogPostsCollectionOrder], preview: Boolean, skip: Int = 0, where: PageBlogPostFilter): PageBlogPostRelatedBlogPostsCollection
-  seoFields(locale: String, preview: Boolean, where: ComponentSeoFilter): ComponentSeo
+  relatedBlogPostsCollection(
+    limit: Int = 100
+    locale: String
+    order: [PageBlogPostRelatedBlogPostsCollectionOrder]
+    preview: Boolean
+    skip: Int = 0
+    where: PageBlogPostFilter
+  ): PageBlogPostRelatedBlogPostsCollection
+  seoFields(
+    locale: String
+    preview: Boolean
+    where: ComponentSeoFilter
+  ): ComponentSeo
   shortDescription(locale: String): String
   slug(locale: String): String
   sys: Sys!
@@ -702,9 +826,26 @@ input PageBlogPostFilter {
 }
 
 type PageBlogPostLinkingCollections {
-  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
-  pageBlogPostCollection(limit: Int = 100, locale: String, order: [PageBlogPostLinkingCollectionsPageBlogPostCollectionOrder], preview: Boolean, skip: Int = 0): PageBlogPostCollection
-  pageLandingCollection(limit: Int = 100, locale: String, order: [PageBlogPostLinkingCollectionsPageLandingCollectionOrder], preview: Boolean, skip: Int = 0): PageLandingCollection
+  entryCollection(
+    limit: Int = 100
+    locale: String
+    preview: Boolean
+    skip: Int = 0
+  ): EntryCollection
+  pageBlogPostCollection(
+    limit: Int = 100
+    locale: String
+    order: [PageBlogPostLinkingCollectionsPageBlogPostCollectionOrder]
+    preview: Boolean
+    skip: Int = 0
+  ): PageBlogPostCollection
+  pageLandingCollection(
+    limit: Int = 100
+    locale: String
+    order: [PageBlogPostLinkingCollectionsPageLandingCollectionOrder]
+    preview: Boolean
+    skip: Int = 0
+  ): PageLandingCollection
 }
 
 enum PageBlogPostLinkingCollectionsPageBlogPostCollectionOrder {
@@ -789,10 +930,18 @@ To have an entry point for the app (e.g. Homepage) [See type definition](https:/
 """
 type PageLanding implements Entry {
   contentfulMetadata: ContentfulMetadata!
-  featuredBlogPost(locale: String, preview: Boolean, where: PageBlogPostFilter): PageBlogPost
+  featuredBlogPost(
+    locale: String
+    preview: Boolean
+    where: PageBlogPostFilter
+  ): PageBlogPost
   internalName(locale: String): String
   linkedFrom(allowedLocales: [String]): PageLandingLinkingCollections
-  seoFields(locale: String, preview: Boolean, where: ComponentSeoFilter): ComponentSeo
+  seoFields(
+    locale: String
+    preview: Boolean
+    where: ComponentSeoFilter
+  ): ComponentSeo
   sys: Sys!
 }
 
@@ -822,7 +971,12 @@ input PageLandingFilter {
 }
 
 type PageLandingLinkingCollections {
-  entryCollection(limit: Int = 100, locale: String, preview: Boolean, skip: Int = 0): EntryCollection
+  entryCollection(
+    limit: Int = 100
+    locale: String
+    preview: Boolean
+    skip: Int = 0
+  ): EntryCollection
 }
 
 enum PageLandingOrder {
@@ -846,18 +1000,75 @@ scalar Quality
 type Query {
   _node(id: ID!, locale: String, preview: Boolean): _Node
   asset(id: String!, locale: String, preview: Boolean): Asset
-  assetCollection(limit: Int = 100, locale: String, order: [AssetOrder], preview: Boolean, skip: Int = 0, where: AssetFilter): AssetCollection
-  componentAuthor(id: String!, locale: String, preview: Boolean): ComponentAuthor
-  componentAuthorCollection(limit: Int = 100, locale: String, order: [ComponentAuthorOrder], preview: Boolean, skip: Int = 0, where: ComponentAuthorFilter): ComponentAuthorCollection
-  componentRichImage(id: String!, locale: String, preview: Boolean): ComponentRichImage
-  componentRichImageCollection(limit: Int = 100, locale: String, order: [ComponentRichImageOrder], preview: Boolean, skip: Int = 0, where: ComponentRichImageFilter): ComponentRichImageCollection
+  assetCollection(
+    limit: Int = 100
+    locale: String
+    order: [AssetOrder]
+    preview: Boolean
+    skip: Int = 0
+    where: AssetFilter
+  ): AssetCollection
+  componentAuthor(
+    id: String!
+    locale: String
+    preview: Boolean
+  ): ComponentAuthor
+  componentAuthorCollection(
+    limit: Int = 100
+    locale: String
+    order: [ComponentAuthorOrder]
+    preview: Boolean
+    skip: Int = 0
+    where: ComponentAuthorFilter
+  ): ComponentAuthorCollection
+  componentRichImage(
+    id: String!
+    locale: String
+    preview: Boolean
+  ): ComponentRichImage
+  componentRichImageCollection(
+    limit: Int = 100
+    locale: String
+    order: [ComponentRichImageOrder]
+    preview: Boolean
+    skip: Int = 0
+    where: ComponentRichImageFilter
+  ): ComponentRichImageCollection
   componentSeo(id: String!, locale: String, preview: Boolean): ComponentSeo
-  componentSeoCollection(limit: Int = 100, locale: String, order: [ComponentSeoOrder], preview: Boolean, skip: Int = 0, where: ComponentSeoFilter): ComponentSeoCollection
-  entryCollection(limit: Int = 100, locale: String, order: [EntryOrder], preview: Boolean, skip: Int = 0, where: EntryFilter): EntryCollection
+  componentSeoCollection(
+    limit: Int = 100
+    locale: String
+    order: [ComponentSeoOrder]
+    preview: Boolean
+    skip: Int = 0
+    where: ComponentSeoFilter
+  ): ComponentSeoCollection
+  entryCollection(
+    limit: Int = 100
+    locale: String
+    order: [EntryOrder]
+    preview: Boolean
+    skip: Int = 0
+    where: EntryFilter
+  ): EntryCollection
   pageBlogPost(id: String!, locale: String, preview: Boolean): PageBlogPost
-  pageBlogPostCollection(limit: Int = 100, locale: String, order: [PageBlogPostOrder], preview: Boolean, skip: Int = 0, where: PageBlogPostFilter): PageBlogPostCollection
+  pageBlogPostCollection(
+    limit: Int = 100
+    locale: String
+    order: [PageBlogPostOrder]
+    preview: Boolean
+    skip: Int = 0
+    where: PageBlogPostFilter
+  ): PageBlogPostCollection
   pageLanding(id: String!, locale: String, preview: Boolean): PageLanding
-  pageLandingCollection(limit: Int = 100, locale: String, order: [PageLandingOrder], preview: Boolean, skip: Int = 0, where: PageLandingFilter): PageLandingCollection
+  pageLandingCollection(
+    limit: Int = 100
+    locale: String
+    order: [PageLandingOrder]
+    preview: Boolean
+    skip: Int = 0
+    where: PageLandingFilter
+  ): PageLandingCollection
 }
 
 type ResourceLink {

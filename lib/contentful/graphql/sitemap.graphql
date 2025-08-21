@@ -16,7 +16,6 @@ fragment sitemapPagesFields on Query {
   }
 }
 
-
 query sitemapPages($locale: String!) {
   ...sitemapPagesFields
 }

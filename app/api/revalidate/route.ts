@@ -1,17 +1,17 @@
-import { NextRequest, NextResponse } from "next/server";
-import { revalidatePath } from "next/cache";
+import { revalidatePath } from 'next/cache';
+import { type NextRequest, NextResponse } from 'next/server';
 
-export const runtime = "edge";
+export const runtime = 'edge';
 
-export async function GET(request: NextRequest) {
+export function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
-  const secret = searchParams.get("secret");
+  const secret = searchParams.get('secret');
 
   if (secret !== process.env.NEXT_REVALIDATE_SECRET) {
-    return NextResponse.json({ error: "Invalid token" }, { status: 401 });
+    return NextResponse.json({ error: 'Invalid token' }, { status: 401 });
   }
 
-  const path = searchParams.get("path") || "/";
+  const path = searchParams.get('path') || '/';
   revalidatePath(path);
   return NextResponse.json(
     {

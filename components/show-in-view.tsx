@@ -1,14 +1,14 @@
-import { useInView } from "react-intersection-observer";
+import { useInView } from 'react-intersection-observer';
 
-export interface ShowInViewProps {
+export type ShowInViewProps = {
   children: React.ReactNode;
   rootMargin?: string;
   triggerOnce?: boolean;
-}
+};
 
 export const ShowInView = ({
   children,
-  rootMargin = "0px",
+  rootMargin = '0px',
   triggerOnce = true,
   ...rest
 }: ShowInViewProps) => {
@@ -18,7 +18,7 @@ export const ShowInView = ({
   });
 
   return (
-    <div ref={ref} data-role="intersection-observer" {...rest}>
+    <div data-role="intersection-observer" ref={ref} {...rest}>
       {inView && children}
     </div>
   );

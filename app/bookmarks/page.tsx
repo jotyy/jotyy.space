@@ -1,4 +1,4 @@
-import { PageContainer, PageHeader } from "@/components/page-container";
+import { PageContainer, PageHeader } from '@/components/page-container';
 
 export default function Bookmarks() {
   return (

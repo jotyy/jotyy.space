@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 export function useKeyPress(
   callback: (event: KeyboardEvent) => void,
@@ -11,9 +11,9 @@ export function useKeyPress(
       }
     };
 
-    window.addEventListener("keydown", handler, { passive: true });
+    window.addEventListener('keydown', handler, { passive: true });
     return () => {
-      window.removeEventListener("keydown", handler);
+      window.removeEventListener('keydown', handler);
     };
   }, [callback, keyCodes]);
 }

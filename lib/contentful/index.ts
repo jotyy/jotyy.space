@@ -1,4 +1,4 @@
-import { client, previewClient } from "@/lib/contentful/client";
+import { client, previewClient } from '@/lib/contentful/client';
 
 export async function getPost(slug: string, preview: boolean, locale: string) {
   const gqlClient = preview ? previewClient : client;

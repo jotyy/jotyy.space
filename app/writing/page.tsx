@@ -1,14 +1,13 @@
-import { PageContainer, PageHeader } from "@/components/page-container";
-import { PostList } from "@/components/post-list";
+import { PageContainer, PageHeader } from '@/components/page-container';
+import { PostList } from '@/components/post-list';
 import {
-  PageBlogPostFieldsFragment,
+  type PageBlogPostFieldsFragment,
   PageBlogPostOrder,
-} from "@/lib/contentful/__generated/sdk";
-import { client, previewClient } from "@/lib/contentful/client";
+} from '@/lib/contentful/__generated/sdk';
+import { client, previewClient } from '@/lib/contentful/client';
 
-async function getAllPosts() {
+async function getAllPosts(preview = false) {
   try {
-    const preview = false;
     const gqlClient = preview ? previewClient : client;
 
     const blogPostsData = await gqlClient.pageBlogPostCollection({
@@ -33,8 +32,8 @@ export default async function Writing() {
   return (
     <PageContainer>
       <PageHeader
-        heading="Writing"
         description="At times I compose content on various topics."
+        heading="Writing"
       />
 
       <div className="py-10">

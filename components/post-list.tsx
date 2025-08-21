@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { PostItem } from "@/components/post-item";
-import { PageBlogPostFieldsFragment } from "@/lib/contentful/__generated/sdk";
+import { PostItem } from '@/components/post-item';
+import type { PageBlogPostFieldsFragment } from '@/lib/contentful/__generated/sdk';
 
-export interface PostListProps {
+export type PostListProps = {
   data: PageBlogPostFieldsFragment[];
-}
+};
 
 export function PostList({ data }: PostListProps) {
   return (

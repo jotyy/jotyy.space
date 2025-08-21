@@ -1,25 +1,30 @@
-"use client";
+/** biome-ignore-all lint/suspicious/noExplicitAny: <tbd> */
+'use client';
 
-import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { BLOCKS, INLINES, MARKS } from "@contentful/rich-text-types";
-import dynamic from "next/dynamic";
-
-import { CodeBlock } from "@/components/contentful/code-block";
-import { Link } from "@/components/link";
-import {
+import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
+import { BLOCKS, INLINES, MARKS } from '@contentful/rich-text-types';
+import dynamic from 'next/dynamic';
+import Image from 'next/image';
+import { CodeBlock } from '@/components/contentful/code-block';
+import { Link } from '@/components/link';
+import type {
   ComponentRichImage,
   PageBlogPostFieldsFragment,
-} from "@/lib/contentful/__generated/sdk";
-import { dasherize } from "@/utils";
-const DynamicIframe = dynamic(() => import("@/components/contentful/iframe"));
+} from '@/lib/contentful/__generated/sdk';
+import { dasherize } from '@/utils';
+
+const DynamicIframe = dynamic(() => import('@/components/contentful/iframe'));
 
 export type EmbeddedEntryType = ComponentRichImage | null;
+
+const DEFAULT_ASSET_HEIGHT = 300;
+const DEFAULT_ASSET_WIDTH = 400;
 
 function options(
   links:
     | {
         entries: {
-          block: Array<EmbeddedEntryType>;
+          block: EmbeddedEntryType[];
         };
       }
     | any
@@ -47,12 +52,12 @@ function options(
         const url = `h2-${id}`;
         return (
           <h2
+            className="group before:-left-4 relative mt-6 mb-2 w-fit cursor-pointer before:absolute hover:before:content-['#']"
             id={url}
-            className="group relative mb-2 mt-6 w-fit cursor-pointer before:absolute before:-left-4 hover:before:content-['#']"
           >
             <a
-              href={`#${url}`}
               className="group-hover:underline group-hover:underline-offset-4"
+              href={`#${url}`}
             >
               {children}
             </a>
@@ -64,12 +69,12 @@ function options(
         const url = `h3-${id}`;
         return (
           <h3
+            className="group before:-left-4 relative mt-6 mb-2 w-fit cursor-pointer before:absolute hover:before:content-['#']"
             id={url}
-            className="group relative mb-2 mt-6 w-fit cursor-pointer before:absolute before:-left-4 hover:before:content-['#']"
           >
             <a
-              href={`#${url}`}
               className="group-hover:underline group-hover:underline-offset-4"
+              href={`#${url}`}
             >
               {children}
             </a>
@@ -94,7 +99,7 @@ function options(
         <li>{children}</li>
       ),
       [BLOCKS.QUOTE]: (_: unknown, children: React.ReactNode) => (
-        <blockquote className="mb-4 rounded-r-lg border-l-2 border-zinc-200 px-4 font-medium">
+        <blockquote className="mb-4 rounded-r-lg border-zinc-200 border-l-2 px-4 font-medium">
           {children}
         </blockquote>
       ),
@@ -103,17 +108,16 @@ function options(
 
         return (
           <figure className="mb-6 flex flex-col gap-2 overflow-hidden rounded-xl">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={asset.url}
-              width={asset.width || 400}
-              height={asset.height || 300}
+            <Image
               alt={asset.description || asset.title}
-              loading="lazy"
               className="animate-reveal"
+              height={asset.height || DEFAULT_ASSET_HEIGHT}
+              loading="lazy"
+              src={asset.url}
+              width={asset.width || DEFAULT_ASSET_WIDTH}
             />
             {asset.description && (
-              <figcaption className="break-all text-center text-xs font-light text-zinc-500">
+              <figcaption className="break-all text-center font-light text-xs text-zinc-500">
                 {asset.description}
               </figcaption>
             )}
@@ -128,27 +132,27 @@ function options(
         const entry = findInlineEntry(node.data.target.sys.id);
 
         switch (entry.__typename) {
-          case "ContentEmbed": {
+          case 'ContentEmbed': {
             const { embedUrl, title, type } = entry;
 
             switch (type) {
-              case "Video": {
+              case 'Video': {
                 return (
                   <DynamicIframe
-                    embedUrl={embedUrl}
-                    title={title}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     className="aspect-video"
+                    embedUrl={embedUrl}
+                    title={title}
                   />
                 );
               }
-              case "SoundCloud": {
+              case 'SoundCloud': {
                 return (
                   <DynamicIframe
-                    embedUrl={embedUrl}
-                    title={title}
-                    scrolling="no"
                     className="h-[166px]"
+                    embedUrl={embedUrl}
+                    scrolling="no"
+                    title={title}
                   />
                 );
               }
@@ -156,7 +160,7 @@ function options(
                 return null;
             }
           }
-          case "CodeBlock": {
+          case 'CodeBlock': {
             return <CodeBlock {...entry} />;
           }
           // case "Tweet": {
@@ -171,9 +175,11 @@ function options(
   };
 }
 
-export type Content = PageBlogPostFieldsFragment["content"];
+export type Content = PageBlogPostFieldsFragment['content'];
 
 export const RichText = ({ content }: { content: Content }) => {
-  if (!content) return null;
+  if (!content) {
+    return null;
+  }
   return documentToReactComponents(content.json, options(content.links));
 };

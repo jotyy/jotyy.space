@@ -1,20 +1,21 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import { memo, useEffect, useState } from "react";
-import Balancer from "react-wrap-balancer";
+import Link from 'next/link';
+import { memo, useEffect, useState } from 'react';
+import Balancer from 'react-wrap-balancer';
+import { Icons } from '@/components/icons';
+import { MobileDrawer } from '@/components/mobile-drawer';
+import { Button } from '@/components/ui/button';
+import { MOBILE_SCROLL_THRESHOLD, SCROLL_AREA_ID } from '@/lib/config';
 
-import { Button } from "@/components/ui/button";
-import { MobileDrawer } from "@/components/mobile-drawer";
-import { MOBILE_SCROLL_THRESHOLD, SCROLL_AREA_ID } from "@/lib/config";
-import { Icons } from "@/components/icons";
+const ONE_HUNDRED = 100;
 
-export interface FloatingHeaderProps {
+export type FloatingHeaderProps = {
   scrollTitle?: string;
   title?: string;
   goBackLink?: string;
   children?: React.ReactNode;
-}
+};
 
 export const NavHeader = memo(
   ({ scrollTitle, title, goBackLink, children }: FloatingHeaderProps) => {
@@ -26,17 +27,17 @@ export const NavHeader = memo(
     useEffect(() => {
       const scrollAreaElem = document.querySelector(`#${SCROLL_AREA_ID}`);
 
-      const onScroll = (e: any) => {
-        const scrollY = e.target.scrollTop;
+      const onScroll = (e: Event) => {
+        const scrollY = (e.target as HTMLElement).scrollTop;
 
-        const translateY = Math.max(100 - scrollY, 0);
+        const translateY = Math.max(ONE_HUNDRED - scrollY, 0);
         const opacity = Math.min(
           Math.max(
             +(
               (scrollY -
                 MOBILE_SCROLL_THRESHOLD *
-                  (MOBILE_SCROLL_THRESHOLD / (scrollY ** 2 / 100))) /
-              100
+                  (MOBILE_SCROLL_THRESHOLD / (scrollY ** 2 / ONE_HUNDRED))) /
+              ONE_HUNDRED
             ).toFixed(2),
             0
           ),
@@ -47,24 +48,24 @@ export const NavHeader = memo(
       };
 
       if (scrollTitle) {
-        scrollAreaElem?.addEventListener("scroll", onScroll, {
+        scrollAreaElem?.addEventListener('scroll', onScroll, {
           passive: true,
         });
       }
-      return () => scrollAreaElem?.removeEventListener("scroll", onScroll);
+      return () => scrollAreaElem?.removeEventListener('scroll', onScroll);
     }, [scrollTitle]);
 
     return (
-      <header className="sticky inset-x-0 top-0 z-10 mx-auto flex h-12 w-full shrink-0 items-center overflow-hidden border-b bg-background text-sm font-medium lg:hidden">
+      <header className="sticky inset-x-0 top-0 z-10 mx-auto flex h-12 w-full shrink-0 items-center overflow-hidden border-b bg-background font-medium text-sm lg:hidden">
         <div className="flex h-full w-full items-center px-3">
           <div className="flex w-full items-center justify-between gap-2">
             <div className="flex flex-1 items-center gap-1">
               {goBackLink ? (
                 <Button
-                  variant="ghost"
-                  size="icon"
-                  className="shrink-0"
                   asChild
+                  className="shrink-0"
+                  size="icon"
+                  variant="ghost"
                 >
                   <Link href={goBackLink} title="Go back">
                     <Icons.arrowLeft />
@@ -104,4 +105,4 @@ export const NavHeader = memo(
   }
 );
 
-NavHeader.displayName = "NavHeader";
+NavHeader.displayName = 'NavHeader';

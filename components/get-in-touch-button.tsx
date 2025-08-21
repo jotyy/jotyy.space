@@ -1,19 +1,19 @@
-"use client";
+'use client';
 
-import { Button } from "@/components/ui/button";
-import { Icons } from "@/components/icons";
-import { useRouter } from "next/navigation";
+import { useRouter } from 'next/navigation';
+import { Icons } from '@/components/icons';
+import { Button } from '@/components/ui/button';
 
 export function GetInTouchButton() {
   const router = useRouter();
 
   return (
     <Button
-      className="font-semibold py-6 text-base group w-fit"
-      onClick={() => router.push("/contact")}
+      className="group w-fit py-6 font-semibold text-base"
+      onClick={() => router.push('/contact')}
     >
       Get in touch
-      <div className="ml-4 rounded-full bg-primary-foreground/10 p-1.5 transition-all duration-300 -rotate-45 group-hover:rotate-0">
+      <div className="-rotate-45 ml-4 rounded-full bg-primary-foreground/10 p-1.5 transition-all duration-300 group-hover:rotate-0">
         <Icons.arrowRight />
       </div>
     </Button>

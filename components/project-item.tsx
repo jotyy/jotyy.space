@@ -1,14 +1,14 @@
-import { Badge } from "@/components/ui/badge";
-import Image from "next/image";
-import Link from "next/link";
+import Image from 'next/image';
+import Link from 'next/link';
+import { Badge } from '@/components/ui/badge';
 
-export interface ProjectItemProps {
+export type ProjectItemProps = {
   title: string;
   description: string;
   href?: string;
   cover: string;
   tags: string[];
-}
+};
 
 export function ProjectItem({
   title,
@@ -19,23 +19,21 @@ export function ProjectItem({
 }: ProjectItemProps) {
   return (
     <div className="flex flex-col items-start">
-      <Link href={href || ""} target="_blank">
-        <div className="bg-gradient-to-tl from-[#757F9A] to-[#D7DDE8] dark:from-[#1A1A1A] dark:to-[#2A2A2A] w-full aspect-[4/3] rounded-lg overflow-hidden relative cursor-pointer">
+      <Link href={href || ''} target="_blank">
+        <div className="relative aspect-[4/3] w-full cursor-pointer overflow-hidden rounded-lg bg-gradient-to-tl from-[#757F9A] to-[#D7DDE8] dark:from-[#1A1A1A] dark:to-[#2A2A2A]">
           <Image
-            src={cover}
-            loading="lazy"
             alt={title}
-            width={400}
+            className="aspect-[4/3] h-full w-full rounded-md object-cover transition-all hover:scale-110"
             height={300}
-            className="object-cover rounded-md w-full h-full transition-all hover:scale-110 aspect-[4/3]"
+            loading="lazy"
+            src={cover}
+            width={400}
           />
         </div>
       </Link>
-      <p className="text-xs mt-2 text-muted-foreground">{description}</p>
-      <h3 className="text-lg font-semibold text-foreground">
-        {title}
-      </h3>
-      <div className="flex flex-wrap gap-1 mt-2">
+      <p className="mt-2 text-muted-foreground text-xs">{description}</p>
+      <h3 className="font-semibold text-foreground text-lg">{title}</h3>
+      <div className="mt-2 flex flex-wrap gap-1">
         {tags.map((tag) => (
           <Badge key={tag} variant="outline">
             {tag}
