@@ -24,7 +24,7 @@ export const MenuContent = () => {
               Joshua Li
             </span>
             <span className="text-muted-foreground text-sm">
-              Software Engineer
+              Design Engineer
             </span>
           </div>
           <ThemeToggle />
