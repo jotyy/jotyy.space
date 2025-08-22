@@ -54,7 +54,7 @@ export default async function Home() {
       <div>
         <h5 className="font-semibold text-lg">Hey, it&apos;s Joshua</h5>
         <h1 className="mt-2 font-semibold text-4xl text-foreground leading-normal">
-          Design Engineer.
+          Design Engineer build AI-powered products.
         </h1>
         <p className="text-muted-foreground">
           I&apos;m a versatile engineer with 8 years of experience building
