@@ -42,10 +42,14 @@ export default async function RootLayout({
           <aside className="lg:flex">
             <SideBar className="relative hidden lg:flex" />
           </aside>
-          <div className="flex flex-1">
-            <ScrollArea className="flex flex-col" hasScrollTitle>
+          <div className="flex min-w-0 flex-1 overflow-hidden">
+            <ScrollArea
+              className="flex w-full flex-col overflow-y-auto"
+              hasScrollTitle
+              id="scroll-area"
+            >
               <NavHeader scrollTitle="Jotyy" />
-              <div className="mx-auto max-w-6xl pb-12">{children}</div>
+              <div className="w-full overflow-x-hidden">{children}</div>
             </ScrollArea>
           </div>
           <Toaster />
