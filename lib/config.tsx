@@ -167,9 +167,9 @@ export const WORKS = [
     tags: ['Next.js', 'TRPC', 'Motion'],
   },
   {
-    title: 'DensereRetriever',
+    title: 'DenserRetriever',
     description: 'Enterprise-grade Retriever for LLMs',
-    href: 'https://retriever.denser.ai',
+    href: 'https://github.com/denser-org/denser-retriever',
     cover: '/images/projects/denser-retriever.webp',
     tags: ['Python', 'Langchain', 'RAG'],
   },
