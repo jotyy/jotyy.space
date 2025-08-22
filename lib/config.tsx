@@ -160,12 +160,6 @@ export const WORKS = [
     tags: ['Astro', 'Tailwind', 'shadcn/ui'],
   },
   {
-    title: 'Holaboss Dashboard',
-    description: 'AI Agent platform for solo builders',
-    cover: '/images/projects/holaboss-dashboard.webp',
-    tags: ['React Router', 'Hono.js', 'shadcn/ui'],
-  },
-  {
     title: 'iMerch.ai',
     description: 'AI Merch Portal Site',
     href: 'https://imerch.ai',
@@ -173,11 +167,11 @@ export const WORKS = [
     tags: ['Next.js', 'TRPC', 'Motion'],
   },
   {
-    title: 'iMerch Dashboard',
-    description: 'Your AI Talent Manager & Monetization Platform',
-    href: 'https://imerch.ai/dashboard',
-    cover: '/images/projects/imerch-dashboard.webp',
-    tags: ['Next.js', 'Tanstack Query', 'shadcn/ui'],
+    title: 'DensereRetriever',
+    description: 'Enterprise-grade Retriever for LLMs',
+    href: 'https://retriever.denser.ai',
+    cover: '/images/projects/denser-retriever.webp',
+    tags: ['Python', 'Langchain', 'RAG'],
   },
   {
     title: 'Denser.ai',
@@ -193,32 +187,25 @@ export const WORKS = [
     cover: '/images/projects/denser-dashboard.webp',
     tags: ['React', 'Vite', 'shadcn/ui', 'Nest.js'],
   },
-  {
-    title: 'MegaETH Waitlist',
-    description: 'Personal designed wait list page',
-    href: 'https://mega-eth-landing.vercel.app/v1',
-    cover: '/images/projects/megaeth-v1.webp',
-    tags: ['Next.js', 'Design', 'Three.js'],
-  },
-  {
-    title: 'MegaETH Landing',
-    description: 'Personal designed landing page',
-    href: 'https://mega-eth-landing.vercel.app/v3',
-    cover: '/images/projects/megaeth-v3.webp',
-    tags: ['Next.js', 'Design', 'Blur'],
-  },
-  {
-    title: 'Lattice Browser',
-    description: 'Blockchain Explorer',
-    cover: '/images/projects/lattice-browser.png',
-    tags: ['Next.js', 'GraphQL', 'Ethers'],
-  },
-  {
-    title: 'Udun Wallet',
-    description: 'Ethereum wallet',
-    cover: '/images/projects/udun-wallet.png',
-    tags: ['Flutter', 'Ethers.js', 'Rust'],
-  },
+  // {
+  //   title: 'MegaETH Waitlist',
+  //   description: 'Personal designed wait list page',
+  //   href: 'https://mega-eth-landing.vercel.app/v1',
+  //   cover: '/images/projects/megaeth-v1.webp',
+  //   tags: ['Next.js', 'Design', 'Three.js'],
+  // },
+  // {
+  //   title: 'Lattice Browser',
+  //   description: 'Blockchain Explorer',
+  //   cover: '/images/projects/lattice-browser.png',
+  //   tags: ['Next.js', 'GraphQL', 'Ethers'],
+  // },
+  // {
+  //   title: 'Udun Wallet',
+  //   description: 'Ethereum wallet',
+  //   cover: '/images/projects/udun-wallet.png',
+  //   tags: ['Flutter', 'Ethers.js', 'Rust'],
+  // },
 ];
 
 export const STACKS = {
