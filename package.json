@@ -25,7 +25,7 @@
     "date-fns": "^4.1.0",
     "framer-motion": "^12.23.12",
     "graphql": "^16.11.0",
-    "lucide-react": "^0.540.0",
+    "lucide-react": "^0.541.0",
     "next": "15.5.0",
     "next-themes": "^0.4.6",
     "react": "19.1.1",
@@ -60,7 +60,7 @@
     "tw-animate-css": "^1.3.7",
     "typescript": "^5.9.2",
     "typescript-graphql-request": "^4.4.6",
-    "ultracite": "5.2.4"
+    "ultracite": "5.2.5"
   },
   "overrides": {
     "@types/react": "19.1.10",
