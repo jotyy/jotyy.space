@@ -2,7 +2,12 @@ import NextLink from 'next/link';
 
 import { isExternalLink } from '@/utils';
 
-export const Link = ({ href = '#', ...rest }) => {
+interface Props {
+  href?: string;
+  [key: string]: any;
+}
+
+export const Link = ({ href = '#', ...rest }: Props) => {
   const isExternal = isExternalLink(href);
   if (isExternal) {
     return (
